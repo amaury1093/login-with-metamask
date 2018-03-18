@@ -2,7 +2,7 @@
   color: white;
   display: block;
   font-size: 16px;
-  height: 50px;
+  height: 60px;
   margin: 10px auto;
   width: 300px;
 }
@@ -11,10 +11,10 @@
   background-color: darkgray;
 }
 
-.Login-facebook {
+.Login-fb {
   background-color: rgb(72, 98, 163);
 }
 
-.Login-metamask {
+.Login-mm {
   background-color: rgb(255, 125, 0);
 }

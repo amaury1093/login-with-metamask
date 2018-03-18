@@ -36,9 +36,9 @@ class App extends Component {
         </header>
         <div className="App-intro">
           {auth ? (
-            <Username handleLogout={this.handleLogout} />
+            <Username onLogout={this.handleLogout} />
           ) : (
-            <Login handleLogin={this.handleLogin} />
+            <Login onLogin={this.handleLogin} />
           )}
         </div>
       </div>
