@@ -12,4 +12,12 @@ export const get = (_, res, next, id) =>
     .then(user => res.json(user))
     .catch(next);
 
-export const create = () => {};
+export const create = (req, res, next, _id) =>
+  User.create(req.body)
+    .then(user => res.json(user))
+    .catch(next);
+
+export const patch = (req, res, next, _id) =>
+  User.update(req.body, { where: { _id } })
+    .then(user => res.json(user))
+    .catch(next);

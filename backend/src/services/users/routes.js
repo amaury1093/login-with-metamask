@@ -13,4 +13,7 @@ router.route('/:userId').get(controller.get);
 /** POST /api/users */
 router.route('/').post(controller.create);
 
+/** PATCH /api/users */
+router.route('/').patch(controller.patch);
+
 export default router;
