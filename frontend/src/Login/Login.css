@@ -3,9 +3,22 @@
 }
 
 .Login-button {
+  color: white;
   display: block;
   font-size: 16px;
   height: 50px;
-  margin: 30px auto;
+  margin: 10px auto;
   width: 300px;
+}
+
+.Login-email {
+  background-color: darkgray;
+}
+
+.Login-facebook {
+  background-color: rgb(72, 98, 163);
+}
+
+.Login-metamask {
+  background-color: rgb(255, 125, 0);
 }
