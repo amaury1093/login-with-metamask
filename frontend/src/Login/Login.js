@@ -5,7 +5,7 @@ import './Login.css';
 class Login extends Component {
   render() {
     return (
-      <div className="Login">
+      <div>
         <p>
           Please select your login method.<br />For the purpose of this demo,
           only MetaMask login is implemented.
