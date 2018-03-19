@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.2",
+    "ethereumjs-util": "^5.1.5",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.0",
     "sequelize": "^4.37.1",

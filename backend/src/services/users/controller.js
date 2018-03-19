@@ -12,7 +12,7 @@ export const get = (_, res, next, id) =>
     .then(user => res.json(user))
     .catch(next);
 
-export const create = (req, res, next, _id) =>
+export const create = (req, res, next) =>
   User.create(req.body)
     .then(user => res.json(user))
     .catch(next);

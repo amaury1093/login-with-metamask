@@ -1,31 +1,86 @@
+import ethUtil from 'ethereumjs-util';
 import jwt from 'jsonwebtoken';
 
 import db from '../../db';
 
 const User = db.models.User;
 
-export const create = (req, res) => {
-  const { nonce, publicAddress } = req.body;
-  console.log(nonce, publicAddress);
+export const create = (req, res, next) => {
+  const { signature, publicAddress } = req.body;
+  if (!signature || !publicAddress)
+    return res
+      .status(400)
+      .send({ error: 'Request should have signature and publicAddress' });
 
-  // Creating a JWT here
-  // https://github.com/auth0/node-jsonwebtoken
-  return new Promise((resolve, reject) => {
-    jwt.sign(
-      {
-        payload: {
-          nonce,
-          publicAddress
+  return (
+    User.findOne({ where: { publicAddress } })
+      ////////////////////////////////////////////////////
+      // Step 1: Get the user with the given publicAddress
+      ////////////////////////////////////////////////////
+      .then(user => {
+        if (!user)
+          return res.status(500).send({
+            error: `User with publicAddress ${publicAddress} is not found in database`
+          });
+        return user.nonce;
+      })
+      ////////////////////////////////////////////////////
+      // Step 2: Verify digital signature
+      ////////////////////////////////////////////////////
+      .then(nonce => {
+        const msg = `I am signing my one-time nonce: ${nonce}`;
+
+        // We now are in possession of msg, publicAddress and signature. We
+        // can perform an elliptic curve signature verification with ecrecover
+        const msgBuffer = ethUtil.toBuffer(msg);
+        const msgHash = ethUtil.hashPersonalMessage(msgBuffer);
+        const signatureBuffer = ethUtil.toBuffer(signature);
+        const signatureParams = ethUtil.fromRpcSig(signatureBuffer);
+        const publicKey = ethUtil.ecrecover(
+          msgHash,
+          signatureParams.v,
+          signatureParams.r,
+          signatureParams.s
+        );
+        const addressBuffer = ethUtil.publicToAddress(publicKey);
+        const address = ethUtil.bufferToHex(addressBuffer);
+
+        // The signature verification is successful if the address found with
+        // ecrecover matches the initial publicAddress
+        if (address.toLowerCase() === publicAddress.toLowerCase()) {
+          return Promise.resolve();
+        } else {
+          return res
+            .status(500)
+            .send({ error: 'Signature verification failed' });
         }
-      },
-      'shhhhh',
-      null,
-      (err, token) => {
-        if (err) {
-          return reject(err);
-        }
-        return resolve(token);
-      }
-    );
-  }).then(accessToken => res.json({ accessToken }));
+      })
+      ////////////////////////////////////////////////////
+      // Step 3: Create JWT
+      ////////////////////////////////////////////////////
+      .then(
+        () =>
+          new Promise((resolve, reject) => {
+            // https://github.com/auth0/node-jsonwebtoken
+            jwt.sign(
+              {
+                payload: {
+                  signature,
+                  publicAddress
+                }
+              },
+              'shhhhh',
+              null,
+              (err, token) => {
+                if (err) {
+                  return reject(err);
+                }
+                return resolve(token);
+              }
+            );
+          })
+      )
+      .then(accessToken => res.json({ accessToken }))
+      .catch(next)
+  );
 };
