@@ -57,16 +57,25 @@ export const create = (req, res, next) => {
         }
       })
       ////////////////////////////////////////////////////
-      // Step 3: Create JWT
+      // Step 3: Generate a new nonce for the user
+      ////////////////////////////////////////////////////
+      .then(() =>
+        User.update(
+          { nonce: Math.floor(Math.random() * 10000) },
+          { where: { publicAddress } }
+        )
+      )
+      ////////////////////////////////////////////////////
+      // Step 4: Create JWT
       ////////////////////////////////////////////////////
       .then(
-        () =>
+        user =>
           new Promise((resolve, reject) => {
             // https://github.com/auth0/node-jsonwebtoken
             jwt.sign(
               {
                 payload: {
-                  signature,
+                  id: user.id,
                   publicAddress
                 }
               },
