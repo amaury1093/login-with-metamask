@@ -6,6 +6,7 @@
     "dotenv": "^5.0.1",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",
+    "react-blockies": "^1.2.2",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
     "web3": "^0.20.6"

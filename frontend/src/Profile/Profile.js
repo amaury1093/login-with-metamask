@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import Blockies from 'react-blockies';
 import jwtDecode from 'jwt-decode';
+
+import './Profile.css';
 
 class Profile extends Component {
   render() {
@@ -7,7 +10,9 @@ class Profile extends Component {
     const { payload: { publicAddress } } = jwtDecode(accessToken);
     return (
       <div className="Profile">
-        <p>Logged in as {publicAddress}.</p>
+        <p>
+          Logged in as <Blockies seed={publicAddress} /> {publicAddress}.
+        </p>
         <p>
           <button onClick={onLoggedOut}>Logout</button>
         </p>

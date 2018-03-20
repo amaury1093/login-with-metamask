@@ -5550,6 +5550,12 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-blockies@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-blockies/-/react-blockies-1.2.2.tgz#36f2a1aa8b1e43012d0007396b3d0ac83e21807f"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-dev-utils@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.0.tgz#425ac7c9c40c2603bc4f7ab8836c1406e96bb473"
