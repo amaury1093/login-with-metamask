@@ -1,38 +1,19 @@
 import React, { Component } from 'react';
+import jwtDecode from 'jwt-decode';
 
 import './Username.css';
 
 class Username extends Component {
-  state = {
-    username: ''
-  };
-
-  handleChange = ({ target }) => {
-    this.setState({ username: target.value });
-  };
-
-  handleSubmit = () => {};
-
   render() {
-    const { auth, onLoggedOut } = this.props;
-    const { username } = this.state;
-
+    const { auth: { accessToken }, onLoggedOut } = this.props;
     return (
       <div className="Username">
+        <h3>Logged In!</h3>
+        <p>The data in the accessToken is:</p>
+        <p>{JSON.stringify(jwtDecode(accessToken))}</p>
         <p>
-          My public address is<button onClick={onLoggedOut}>Logout</button>
+          <button onClick={onLoggedOut}>Logout</button>
         </p>
-
-        <p>My username is {auth || 'not set.'}</p>
-        <div>
-          <label htmlFor="username">Change username:</label>
-          <input
-            name="username"
-            onChange={this.handleChange}
-            value={username}
-          />
-          <button onClick={this.handleSubmit}>Submit</button>
-        </div>
       </div>
     );
   }
