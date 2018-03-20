@@ -16,12 +16,12 @@ class App extends Component {
     });
   }
 
-  handleLogin = auth => {
+  handleLoggedIn = auth => {
     localStorage.setItem(LS_KEY, JSON.stringify(auth));
     this.setState({ auth });
   };
 
-  handleLogout = () => {
+  handleLoggedOut = () => {
     localStorage.removeItem(LS_KEY);
     this.setState({ auth: undefined });
   };
@@ -36,9 +36,9 @@ class App extends Component {
         </header>
         <div className="App-intro">
           {auth ? (
-            <Username onLogout={this.handleLogout} />
+            <Username onLoggedOut={this.handleLoggedOut} />
           ) : (
-            <Login onLogin={this.handleLogin} />
+            <Login onLoggedIn={this.handleLoggedIn} />
           )}
         </div>
       </div>

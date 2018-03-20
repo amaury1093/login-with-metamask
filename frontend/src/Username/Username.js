@@ -14,13 +14,13 @@ class Username extends Component {
   handleSubmit = () => {};
 
   render() {
-    const { auth, onLogout } = this.props;
+    const { auth, onLoggedOut } = this.props;
     const { username } = this.state;
 
     return (
       <div className="Username">
         <p>
-          My public address is<button onClick={onLogout}>Logout</button>
+          My public address is<button onClick={onLoggedOut}>Logout</button>
         </p>
 
         <p>My username is {auth || 'not set.'}</p>
