@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Login from '../Login';
 import logo from './logo.svg';
-import Username from '../Username/Username';
+import Profile from '../Profile/Profile';
 import './App.css';
 
 const LS_KEY = 'mm-login-demo:auth';
@@ -36,7 +36,7 @@ class App extends Component {
         </header>
         <div className="App-intro">
           {auth ? (
-            <Username auth={auth} onLoggedOut={this.handleLoggedOut} />
+            <Profile auth={auth} onLoggedOut={this.handleLoggedOut} />
           ) : (
             <Login onLoggedIn={this.handleLoggedIn} />
           )}

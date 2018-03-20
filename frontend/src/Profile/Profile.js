@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import jwtDecode from 'jwt-decode';
 
-import './Username.css';
-
-class Username extends Component {
+class Profile extends Component {
   render() {
     const { auth: { accessToken }, onLoggedOut } = this.props;
+    const { payload: { publicAddress } } = jwtDecode(accessToken);
     return (
-      <div className="Username">
-        <h3>Logged In!</h3>
-        <p>The data in the accessToken is:</p>
-        <p>{JSON.stringify(jwtDecode(accessToken))}</p>
+      <div className="Profile">
+        <p>Logged in as {publicAddress}.</p>
         <p>
           <button onClick={onLoggedOut}>Logout</button>
         </p>
@@ -19,4 +16,4 @@ class Username extends Component {
   }
 }
 
-export default Username;
+export default Profile;
