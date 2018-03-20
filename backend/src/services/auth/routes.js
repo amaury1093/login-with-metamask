@@ -4,7 +4,7 @@ import * as controller from './controller';
 
 const router = express.Router();
 
-/** POST /api/users */
+/** POST /api/auth */
 router.route('/').post(controller.create);
 
 export default router;

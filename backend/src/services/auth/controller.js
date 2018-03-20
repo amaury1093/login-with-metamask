@@ -1,6 +1,7 @@
 import ethUtil from 'ethereumjs-util';
 import jwt from 'jsonwebtoken';
 
+import config from '../../config';
 import db from '../../db';
 
 const User = db.models.User;
@@ -19,7 +20,7 @@ export const create = (req, res, next) => {
       ////////////////////////////////////////////////////
       .then(user => {
         if (!user)
-          return res.status(500).send({
+          return res.status(401).send({
             error: `User with publicAddress ${publicAddress} is not found in database`
           });
         return user.nonce;
@@ -51,7 +52,7 @@ export const create = (req, res, next) => {
           return Promise.resolve();
         } else {
           return res
-            .status(500)
+            .status(401)
             .send({ error: 'Signature verification failed' });
         }
       })
@@ -69,7 +70,7 @@ export const create = (req, res, next) => {
                   publicAddress
                 }
               },
-              'shhhhh',
+              config.secret,
               null,
               (err, token) => {
                 if (err) {

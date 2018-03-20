@@ -12,7 +12,6 @@ export default function(sequelize) {
       type: Sequelize.STRING,
       unique: true,
       validate: { isLowercase: true }
-    },
-    username: { type: Sequelize.STRING, unique: true }
+    }
   });
 }
