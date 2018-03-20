@@ -7,6 +7,10 @@
   width: 300px;
 }
 
+.Login-button:hover {
+  opacity: 0.9;
+}
+
 .Login-email {
   background-color: darkgray;
 }
