@@ -69,13 +69,12 @@ export const create = (req, res, next) => {
       // Step 4: Create JWT
       ////////////////////////////////////////////////////
       .then(
-        user =>
-          new Promise((resolve, reject) => {
+        () =>
+          new Promise((resolve, reject) =>
             // https://github.com/auth0/node-jsonwebtoken
             jwt.sign(
               {
                 payload: {
-                  id: user.id,
                   publicAddress
                 }
               },
@@ -87,8 +86,8 @@ export const create = (req, res, next) => {
                 }
                 return resolve(token);
               }
-            );
-          })
+            )
+          )
       )
       .then(accessToken => res.json({ accessToken }))
       .catch(next)
