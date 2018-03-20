@@ -11,4 +11,4 @@ app.use(bodyParser.json());
 // Mount REST on /api
 app.use('/api', services);
 
-app.listen(3000, () => console.log('Express app listening on localhost:3000'));
+app.listen(8000, () => console.log('Express app listening on localhost:8000'));
