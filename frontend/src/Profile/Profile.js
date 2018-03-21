@@ -36,7 +36,10 @@ class Profile extends Component {
     })
       .then(response => response.json())
       .then(user => this.setState({ loading: false, user }))
-      .catch(window.alert);
+      .catch(err => {
+        window.alert(err);
+        this.setState({ loading: false });
+      });
   };
 
   render() {

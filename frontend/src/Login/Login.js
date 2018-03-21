@@ -55,7 +55,8 @@ class Login extends Component {
       .then(this.handleAuthenticate)
       // Pass accessToken back to parent component (to save it in localStorage)
       .then(onLoggedIn)
-      .catch(() => {
+      .catch(err => {
+        window.alert(err);
         this.setState({ loading: false });
       });
   };
