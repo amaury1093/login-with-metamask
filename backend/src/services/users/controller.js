@@ -16,7 +16,21 @@ export const find = (req, res, next) => {
     .catch(next);
 };
 
+export const get = (req, res, next) =>
+  User.findById(req.params.userId)
+    .then(user => res.json(user))
+    .catch(next);
+
 export const create = (req, res, next) =>
   User.create(req.body)
+    .then(user => res.json(user))
+    .catch(next);
+
+export const patch = (req, res, next) =>
+  User.findById(req.params.userId)
+    .then(user => {
+      Object.assign(user, req.body);
+      return user.save();
+    })
     .then(user => res.json(user))
     .catch(next);
