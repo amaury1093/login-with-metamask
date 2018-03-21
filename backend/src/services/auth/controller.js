@@ -23,13 +23,13 @@ export const create = (req, res, next) => {
           return res.status(401).send({
             error: `User with publicAddress ${publicAddress} is not found in database`
           });
-        return user.nonce;
+        return user;
       })
       ////////////////////////////////////////////////////
       // Step 2: Verify digital signature
       ////////////////////////////////////////////////////
-      .then(nonce => {
-        const msg = `I am signing my one-time nonce: ${nonce}`;
+      .then(user => {
+        const msg = `I am signing my one-time nonce: ${user.nonce}`;
 
         // We now are in possession of msg, publicAddress and signature. We
         // can perform an elliptic curve signature verification with ecrecover
@@ -49,7 +49,7 @@ export const create = (req, res, next) => {
         // The signature verification is successful if the address found with
         // ecrecover matches the initial publicAddress
         if (address.toLowerCase() === publicAddress.toLowerCase()) {
-          return Promise.resolve();
+          return user;
         } else {
           return res
             .status(401)
@@ -59,22 +59,21 @@ export const create = (req, res, next) => {
       ////////////////////////////////////////////////////
       // Step 3: Generate a new nonce for the user
       ////////////////////////////////////////////////////
-      .then(() =>
-        User.update(
-          { nonce: Math.floor(Math.random() * 10000) },
-          { where: { publicAddress } }
-        )
-      )
+      .then(user => {
+        user.nonce = Math.floor(Math.random() * 10000);
+        return user.save();
+      })
       ////////////////////////////////////////////////////
       // Step 4: Create JWT
       ////////////////////////////////////////////////////
       .then(
-        () =>
+        user =>
           new Promise((resolve, reject) =>
             // https://github.com/auth0/node-jsonwebtoken
             jwt.sign(
               {
                 payload: {
+                  id: user.id,
                   publicAddress
                 }
               },
