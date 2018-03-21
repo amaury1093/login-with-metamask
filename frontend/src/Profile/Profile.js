@@ -14,7 +14,11 @@ class Profile extends Component {
   componentWillMount() {
     const { auth: { accessToken } } = this.props;
     const { payload: { id } } = jwtDecode(accessToken);
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${id}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${id}`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    })
       .then(response => response.json())
       .then(user => this.setState({ user }))
       .catch(window.alert);
@@ -25,11 +29,13 @@ class Profile extends Component {
   };
 
   handleSubmit = ({ target }) => {
+    const { auth: { accessToken } } = this.props;
     const { user, username } = this.state;
     this.setState({ loading: true });
     fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${user.id}`, {
       body: JSON.stringify({ username }),
       headers: {
+        Authorization: `Bearer ${accessToken}`,
         'Content-Type': 'application/json'
       },
       method: 'PATCH'
@@ -54,10 +60,10 @@ class Profile extends Component {
         <p>
           Logged in as <Blockies seed={publicAddress} />
         </p>
-        <p>
+        <div>
           My username is {username ? <pre>{username}</pre> : 'not set.'} My
           publicAddress is <pre>{publicAddress}</pre>
-        </p>
+        </div>
         <div>
           <label htmlFor="username">Change username: </label>
           <input name="username" onChange={this.handleChange} />

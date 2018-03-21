@@ -1,5 +1,3 @@
-import jwt from 'express-jwt';
-
 import db from '../../db';
 
 const User = db.models.User;

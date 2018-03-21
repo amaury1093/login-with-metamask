@@ -1,5 +1,7 @@
+import jwt from 'express-jwt';
 import express from 'express';
 
+import config from '../../config';
 import * as controller from './controller';
 
 const router = express.Router();
@@ -8,12 +10,16 @@ const router = express.Router();
 router.route('/').get(controller.find);
 
 /** GET /api/users/:userId */
-router.route('/:userId').get(controller.get);
+/** Authenticated route */
+router.route('/:userId').get(jwt({ secret: config.secret }), controller.get);
 
 /** POST /api/users */
 router.route('/').post(controller.create);
 
 /** PATCH /api/users/:userId */
-router.route('/:userId').patch(controller.patch);
+/** Authenticated route */
+router
+  .route('/:userId')
+  .patch(jwt({ secret: config.secret }), controller.patch);
 
 export default router;

@@ -17,6 +17,7 @@
     "cors": "^2.8.4",
     "ethereumjs-util": "^5.1.5",
     "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
     "jsonwebtoken": "^8.2.0",
     "sequelize": "^4.37.1",
     "sqlite3": "^4.0.0"
