@@ -4,7 +4,7 @@ import User from './models/user.model';
 
 const sequelize = new Sequelize(null, null, null, {
   dialect: 'sqlite',
-  storage: 'db.sqlite',
+  storage: '/tmp/db.sqlite',
   logging: false
 });
 
