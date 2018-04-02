@@ -1,7 +1,35 @@
-# login-with-metamask-demo
-Demo project for One-Click Login with MetaMask article
+# Login with MetaMask
+
+This demo is published as part of the corresponding blog article ["One-Click Login with Blockchain: a MetaMask Tutorial"](https://www.toptal.com/ethereum/one-click-login-flows-a-metamask-tutorial#utilize-unreal-developers-today).
+
+## Live Demo 🚀
+
+The working app can be seen on Firebase: https://login-with-metamask.firebaseapp.com.
+
+The backend is hosted on Now by Zeit: https://login-with-metamask.now.sh/api/users
+
+## Getting Started
+
+The app is made out of a `backend` which is a REST API written in Express, and a `frontend` which is a React single-page application. It's really a demo, so I tried to use a few libraries as possible.
+
+#### To start the backend:
+```bash
+cd backend
+yarn install
+yarn dev # Will reload the node app on file changes
+```
+
+The backend should be running on localhost:8000.
+
+#### To start the frontend:
+
+```bash
+cd frontend
+yarn install
+yarn start # Will refresh the page on file changes
+```
 
 * * *
 
-This demo is published as part of the corresponding blog article at https://www.toptal.com/blog.
+This demo is published as part of the corresponding blog article at https://www.toptal.com/ethereum/one-click-login-flows-a-metamask-tutorial#utilize-unreal-developers-today.
 Visit https://www.toptal.com/blog and subscribe to our newsletter to read great posts!
