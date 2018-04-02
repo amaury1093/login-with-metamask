@@ -12,7 +12,7 @@ The backend is hosted on Now by Zeit: https://login-with-metamask.now.sh/api/use
 
 ## Getting Started
 
-The app is made out of a `backend` which is a REST API written in Express, and a `frontend` which is a React single-page application. It's really a demo, so I tried to use a few libraries as possible.
+The app is made out of a `backend` which is a REST API written in Express, and a `frontend` which is a React single-page application. It's really a demo, so I tried to use as few libraries as possible.
 
 #### To start the backend:
 ```bash
