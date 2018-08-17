@@ -14,7 +14,37 @@ The backend is hosted on Now by Zeit: https://login-with-metamask.now.sh/api/use
 
 The app is made out of a `backend` which is a REST API written in Express, and a `frontend` which is a React single-page application. It's really a demo, so I tried to use as few libraries as possible.
 
-#### To start the backend:
+The simplest way to get started is to launch the demo using docker compose. Alternatively you could launch docker the containers manually, or run the node services using yarn.
+
+#### Launch the demo using Docker Compose:
+```bash
+docker-compose up -d
+```
+
+This will leave a the bakcend listening on localhost:8000 and the frontend on localhost:3000.
+
+#### Launching the demo using Docker:
+
+Build and launch the backend:
+
+```bash
+cd backend
+docker build -t login-backend .
+docker run -d -p 8000:8000 login-backend
+```
+
+Build and launch the frontend:
+
+```bash
+cd frontend
+docker build -t login-front .
+docker run -d -p 3000:3000 login-frontend
+```
+
+You can then access the app on localhost:3000.
+
+
+#### Start the backend using Yarn:
 ```bash
 cd backend
 yarn install
@@ -23,7 +53,7 @@ yarn dev # Will reload the node app on file changes
 
 The backend should be running on localhost:8000.
 
-#### To start the frontend:
+#### Start the frontend using Yarn:
 
 ```bash
 cd frontend
