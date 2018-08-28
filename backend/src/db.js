@@ -2,8 +2,8 @@ import Sequelize from 'sequelize';
 
 import User from './models/user.model';
 
-const path = require('path');
-const os = require('os');
+import path from 'path';
+import os from 'os';
 
 const sequelize = new Sequelize(null, null, null, {
   dialect: 'sqlite',
