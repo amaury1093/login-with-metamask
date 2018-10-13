@@ -1,4 +1,5 @@
 version: "3.5"
+#To rebuild images you must use `docker-compose build` or `docker-compose up --build`
 services:
   backend:
     build:
