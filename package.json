@@ -1,6 +1,6 @@
 {
   "name": "login-with-metamask",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
   "description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
   "license": "MIT",
