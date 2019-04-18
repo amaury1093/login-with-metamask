@@ -5,8 +5,4 @@ export class User extends Model {
   public nonce!: number;
   public publicAddress!: string;
   public username?: string; // for nullable fields
-
-  // timestamps!
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
 }

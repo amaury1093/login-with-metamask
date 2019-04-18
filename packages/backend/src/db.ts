@@ -4,23 +4,18 @@ import { INTEGER, Sequelize, STRING } from 'sequelize';
 
 import { User } from './models';
 
-export const sequelize = new Sequelize(
-  'login-with-metamask-database',
-  '',
-  undefined,
-  {
-    dialect: 'sqlite',
-    storage: path.join(os.tmpdir(), 'db.sqlite'),
-    logging: false
-  }
-);
+const sequelize = new Sequelize('login-with-metamask-database', '', undefined, {
+  dialect: 'sqlite',
+  storage: path.join(os.tmpdir(), 'db.sqlite'),
+  logging: false
+});
 
 // Init all models
 User.init(
   {
     nonce: {
       allowNull: false,
-      type: INTEGER.UNSIGNED,
+      type: INTEGER.UNSIGNED, // SQLITE will use INTEGER
       defaultValue: () => Math.floor(Math.random() * 10000) // Initialize with a random nonce
     },
     publicAddress: {
@@ -35,8 +30,12 @@ User.init(
     }
   },
   {
-    tableName: 'users',
     modelName: 'user',
     sequelize // This bit is important
   }
 );
+
+// Create new tables
+sequelize.sync();
+
+export { sequelize };
