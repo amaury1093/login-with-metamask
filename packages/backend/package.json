@@ -1,12 +1,12 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
+  "name": "@login-with-metamask/backend",
+  "version": "1.0.1",
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
-  "description": "Demo project for 'One-Click Login with MetaMask' article",
-  "main": "lib/index.js",
-  "repository": "https://github.com/amaurymartiny/login-with-metamask-demo",
+  "description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
   "license": "MIT",
+  "main": "lib",
   "private": true,
+  "repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
   "scripts": {
     "start": "babel-node src",
     "dev": "nodemon --exec babel-node src/",
