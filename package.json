@@ -1,0 +1,18 @@
+{
+  "name": "login-with-metamask",
+  "version": "0.1.0",
+  "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+  "description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
+  "license": "MIT",
+  "private": true,
+  "repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {},
+  "devDependencies": {
+    "typescript": "^3.4.3"
+  }
+}

@@ -1,10 +1,10 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Demo project for One-Click Login with MetaMask article",
-  "main": "src/index.js",
-  "repository": "https://github.com/amaurymartiny/login-with-metamask-demo",
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+  "description": "Demo project for 'One-Click Login with MetaMask' article",
+  "main": "lib/index.js",
+  "repository": "https://github.com/amaurymartiny/login-with-metamask-demo",
   "license": "MIT",
   "private": true,
   "scripts": {
