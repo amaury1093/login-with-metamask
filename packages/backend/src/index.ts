@@ -1,8 +1,8 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
+import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
+import * as express from 'express';
 
-import services from './services';
+import { services } from './services';
 
 const app = express();
 

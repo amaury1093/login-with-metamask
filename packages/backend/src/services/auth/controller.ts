@@ -1,13 +1,12 @@
-import ethUtil from 'ethereumjs-util';
-import sigUtil from 'eth-sig-util';
-import jwt from 'jsonwebtoken';
+import * as ethUtil from 'ethereumjs-util';
+import * as sigUtil from 'eth-sig-util';
+import { Request, RequestHandler, Response } from 'express';
+import * as jwt from 'jsonwebtoken';
 
-import config from '../../config';
-import db from '../../db';
+import { config } from '../../config';
+import { User } from '../../models/user.model';
 
-const User = db.models.User;
-
-export const create = (req, res, next) => {
+export const create = (req: Request, res: Response, next: RequestHandler) => {
   const { signature, publicAddress } = req.body;
   if (!signature || !publicAddress)
     return res
@@ -19,7 +18,7 @@ export const create = (req, res, next) => {
       ////////////////////////////////////////////////////
       // Step 1: Get the user with the given publicAddress
       ////////////////////////////////////////////////////
-      .then(user => {
+      .then((user: User) => {
         if (!user)
           return res.status(401).send({
             error: `User with publicAddress ${publicAddress} is not found in database`
@@ -29,13 +28,16 @@ export const create = (req, res, next) => {
       ////////////////////////////////////////////////////
       // Step 2: Verify digital signature
       ////////////////////////////////////////////////////
-      .then(user => {
+      .then((user: User) => {
         const msg = `I am signing my one-time nonce: ${user.nonce}`;
 
         // We now are in possession of msg, publicAddress and signature. We
         // will use a helper from eth-sig-util to extract the address from the signature
         const msgBufferHex = ethUtil.bufferToHex(Buffer.from(msg, 'utf8'));
-        const address = sigUtil.recoverPersonalSignature({data: msgBufferHex, sig: signature})
+        const address = sigUtil.recoverPersonalSignature({
+          data: msgBufferHex,
+          sig: signature
+        });
 
         // The signature verification is successful if the address found with
         // sigUtil.recoverPersonalSignature matches the initial publicAddress
@@ -50,7 +52,7 @@ export const create = (req, res, next) => {
       ////////////////////////////////////////////////////
       // Step 3: Generate a new nonce for the user
       ////////////////////////////////////////////////////
-      .then(user => {
+      .then((user: User) => {
         user.nonce = Math.floor(Math.random() * 10000);
         return user.save();
       })
@@ -58,7 +60,7 @@ export const create = (req, res, next) => {
       // Step 4: Create JWT
       ////////////////////////////////////////////////////
       .then(
-        user =>
+        (user: User) =>
           new Promise((resolve, reject) =>
             // https://github.com/auth0/node-jsonwebtoken
             jwt.sign(
@@ -69,7 +71,7 @@ export const create = (req, res, next) => {
                 }
               },
               config.secret,
-              null,
+              {},
               (err, token) => {
                 if (err) {
                   return reject(err);
@@ -79,7 +81,7 @@ export const create = (req, res, next) => {
             )
           )
       )
-      .then(accessToken => res.json({ accessToken }))
+      .then((accessToken: string) => res.json({ accessToken }))
       .catch(next)
   );
 };
