@@ -4,4 +4,4 @@ RUN cd /app && yarn install
 COPY . /app
 WORKDIR /app
 EXPOSE 8000/tcp
-CMD yarn dev
+CMD yarn start
