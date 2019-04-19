@@ -1,8 +1,8 @@
 # Login with MetaMask
 
 [![Build Status](https://travis-ci.org/amaurymartiny/login-with-metamask-demo.svg?branch=master)](https://travis-ci.org/amaurymartiny/login-with-metamask-demo)
-[![Dependencies Status](https://david-dm.org/amaurymartiny/login-with-metamask-demo/status.svg?label=abc&path=packages/frontend)](https://david-dm.org/amaurymartiny/login-with-metamask-demo?label=frontend&path=packages/backend)
-[![Dependencies Status](https://david-dm.org/amaurymartiny/login-with-metamask-demo/status.svg?path=packages/frontend)](https://david-dm.org/amaurymartiny/login-with-metamask-demo?label=frontend&path=packages/frontend)
+[![David (backend)](<https://img.shields.io/david/amaurymartiny/login-with-metamask-demo.svg?label=deps%20(backend)&path=packages/backend>)](https://david-dm.org/amaurymartiny/login-with-metamask-demo?path=packages/backend)
+[![David (frontend)](<https://img.shields.io/david/amaurymartiny/login-with-metamask-demo.svg?label=deps%20(frontend)&path=packages/frontend>)](https://david-dm.org/amaurymartiny/login-with-metamask-demo?path=packages/frontend)
 
 This demo is published as part of the corresponding blog article: ["One-Click Login with Blockchain: a MetaMask Tutorial"](https://www.toptal.com/ethereum/one-click-login-flows-a-metamask-tutorial).
 
