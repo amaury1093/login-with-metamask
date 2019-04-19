@@ -10,6 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "prettier \"src/**/*.{ts,tsx}\" --check",
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {

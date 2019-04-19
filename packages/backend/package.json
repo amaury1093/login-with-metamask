@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts",
-    "lint": "semistandard --env node",
+    "lint": "prettier 'src/**/*.ts' --check",
     "start": "ts-node src"
   },
   "dependencies": {
