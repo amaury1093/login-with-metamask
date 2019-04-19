@@ -96,7 +96,7 @@ export class Login extends React.Component<Props> {
       const signature = await web3!.eth.personal.sign(
         `I am signing my one-time nonce: ${nonce}`,
         publicAddress,
-        ''
+        '' // MetaMask will ignore the password argument here
       );
 
       return { publicAddress, signature };
