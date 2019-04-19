@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Web3 from 'web3';
 
 import { Auth } from '../types';
 import './Login.css';
@@ -7,9 +8,7 @@ interface Props {
   onLoggedIn: (auth: Auth) => void;
 }
 
-const Web3 = require('web3');
-
-let web3: any = undefined; // Will hold the web3 instance
+let web3: Web3 | undefined = undefined; // Will hold the web3 instance
 
 export class Login extends React.Component<Props> {
   state = {
@@ -31,23 +30,36 @@ export class Login extends React.Component<Props> {
       method: 'POST'
     }).then(response => response.json());
 
-  handleClick = () => {
+  handleClick = async () => {
     const { onLoggedIn } = this.props;
 
-    if (!(window as any).web3) {
+    // Check if MetaMask is installed
+    if (!(window as any).ethereum) {
       window.alert('Please install MetaMask first.');
       return;
     }
+
     if (!web3) {
-      // We don't know window.web3 version, so we use our own instance of web3
-      // with provider given by window.web3
-      web3 = new Web3((window as any).currentProvider);
+      try {
+        // Request account access if needed
+        await (window as any).ethereum.enable();
+
+        // We don't know window.web3 version, so we use our own instance of Web3
+        // with the injected provider given by MetaMask
+        web3 = new Web3((window as any).ethereum);
+      } catch (error) {
+        window.alert('You need t to allow');
+        return;
+      }
     }
-    if (!web3.eth.coinbase) {
+
+    const coinbase = await web3.eth.getCoinbase();
+    if (!coinbase) {
       window.alert('Please activate MetaMask first.');
       return;
     }
-    const publicAddress = web3.eth.coinbase.toLowerCase();
+
+    const publicAddress = coinbase.toLowerCase();
     this.setState({ loading: true });
 
     // Look if user with current publicAddress is already present on backend
@@ -73,26 +85,20 @@ export class Login extends React.Component<Props> {
       });
   };
 
-  handleSignMessage = ({
+  handleSignMessage = async ({
     publicAddress,
     nonce
   }: {
     publicAddress: string;
     nonce: string;
   }) => {
-    return new Promise<{
-      publicAddress: string;
-      signature: string;
-    }>((resolve, reject) =>
-      web3.personal.sign(
-        web3.fromUtf8(`I am signing my one-time nonce: ${nonce}`),
-        publicAddress,
-        (err: Error, signature: string) => {
-          if (err) return reject(err);
-          return resolve({ publicAddress, signature });
-        }
-      )
+    // @ts-ignore
+    const signature = await web3!.eth.personal.sign(
+      `I am signing my one-time nonce: ${nonce}`,
+      publicAddress
     );
+
+    return { publicAddress, signature };
   };
 
   handleSignup = (publicAddress: string) => {

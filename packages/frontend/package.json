@@ -23,7 +23,7 @@
     "react-blockies": "^1.4.1",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
-    "web3": "^0.20.7"
+    "web3": "^1.0.0-beta.52"
   },
   "browserslist": [
     ">0.2%",
