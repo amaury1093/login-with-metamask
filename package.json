@@ -12,9 +12,13 @@
     ]
   },
   "scripts": {
-    "lint": "lerna exec yarn lint --parallel"
+    "build": "lerna exec yarn build --parallel",
+    "lint": "lerna exec yarn lint --parallel",
+    "start": "lerna exec yarn start --parallel",
+    "test": "lerna exec yarn test --parallel"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.11",
     "prettier": "^1.17.0",
     "typescript": "^3.4.3"
   }

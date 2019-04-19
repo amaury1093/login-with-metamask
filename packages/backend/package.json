@@ -11,7 +11,8 @@
     "build": "tsc",
     "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts",
     "lint": "prettier 'src/**/*.ts' --check",
-    "start": "ts-node src"
+    "start": "ts-node src",
+    "test": "echo Skipped."
   },
   "dependencies": {
     "@types/cors": "^2.8.4",
