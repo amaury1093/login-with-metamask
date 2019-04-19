@@ -1,19 +1,40 @@
-import React, { Component } from 'react';
-import Blockies from 'react-blockies';
-import jwtDecode from 'jwt-decode';
+import * as React from 'react';
+import * as Blockies from 'react-blockies';
 
+import { Auth } from '../types';
 import './Profile.css';
 
-class Profile extends Component {
-  state = {
+const jwtDecode = require('jwt-decode');
+
+interface Props {
+  auth: Auth;
+  onLoggedOut: () => void;
+}
+
+interface State {
+  loading: boolean;
+  user?: {
+    id: number;
+    username: string;
+  };
+  username: string;
+}
+
+export class Profile extends React.Component<Props, State> {
+  state: State = {
     loading: false,
-    user: null,
+    user: undefined,
     username: ''
   };
 
-  componentWillMount() {
-    const { auth: { accessToken } } = this.props;
-    const { payload: { id } } = jwtDecode(accessToken);
+  componentDidMount() {
+    const {
+      auth: { accessToken }
+    } = this.props;
+    const {
+      payload: { id }
+    } = jwtDecode(accessToken);
+
     fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${id}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`
@@ -24,14 +45,27 @@ class Profile extends Component {
       .catch(window.alert);
   }
 
-  handleChange = ({ target: { value } }) => {
+  handleChange = ({
+    target: { value }
+  }: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ username: value });
   };
 
-  handleSubmit = ({ target }) => {
-    const { auth: { accessToken } } = this.props;
+  handleSubmit = () => {
+    const {
+      auth: { accessToken }
+    } = this.props;
     const { user, username } = this.state;
+
     this.setState({ loading: true });
+
+    if (!user) {
+      window.alert(
+        'The user id has not been fetched yet. Please try again in 5 seconds.'
+      );
+      return;
+    }
+
     fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${user.id}`, {
       body: JSON.stringify({ username }),
       headers: {
@@ -49,8 +83,13 @@ class Profile extends Component {
   };
 
   render() {
-    const { auth: { accessToken }, onLoggedOut } = this.props;
-    const { payload: { publicAddress } } = jwtDecode(accessToken);
+    const {
+      auth: { accessToken },
+      onLoggedOut
+    } = this.props;
+    const {
+      payload: { publicAddress }
+    } = jwtDecode(accessToken);
     const { loading, user } = this.state;
 
     const username = user && user.username;
@@ -78,5 +117,3 @@ class Profile extends Component {
     );
   }
 }
-
-export default Profile;

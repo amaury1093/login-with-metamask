@@ -1,16 +1,28 @@
-import React, { Component } from 'react';
-import Web3 from 'web3';
+import * as React from 'react';
 
+import { Auth } from '../types';
 import './Login.css';
 
-let web3 = null; // Will hold the web3 instance
+interface Props {
+  onLoggedIn: (auth: Auth) => void;
+}
 
-class Login extends Component {
+const Web3 = require('web3');
+
+let web3: any = undefined; // Will hold the web3 instance
+
+export class Login extends React.Component<Props> {
   state = {
     loading: false // Loading button state
   };
 
-  handleAuthenticate = ({ publicAddress, signature }) =>
+  handleAuthenticate = ({
+    publicAddress,
+    signature
+  }: {
+    publicAddress: string;
+    signature: string;
+  }) =>
     fetch(`${process.env.REACT_APP_BACKEND_URL}/auth`, {
       body: JSON.stringify({ publicAddress, signature }),
       headers: {
@@ -22,14 +34,14 @@ class Login extends Component {
   handleClick = () => {
     const { onLoggedIn } = this.props;
 
-    if (!window.web3) {
+    if (!(window as any).web3) {
       window.alert('Please install MetaMask first.');
       return;
     }
     if (!web3) {
       // We don't know window.web3 version, so we use our own instance of web3
       // with provider given by window.web3
-      web3 = new Web3(window.web3.currentProvider);
+      web3 = new Web3((window as any).currentProvider);
     }
     if (!web3.eth.coinbase) {
       window.alert('Please activate MetaMask first.');
@@ -46,8 +58,8 @@ class Login extends Component {
     )
       .then(response => response.json())
       // If yes, retrieve it. If no, create it.
-      .then(
-        users => (users.length ? users[0] : this.handleSignup(publicAddress))
+      .then(users =>
+        users.length ? users[0] : this.handleSignup(publicAddress)
       )
       // Popup MetaMask confirmation modal to sign message
       .then(this.handleSignMessage)
@@ -61,12 +73,21 @@ class Login extends Component {
       });
   };
 
-  handleSignMessage = ({ publicAddress, nonce }) => {
-    return new Promise((resolve, reject) =>
+  handleSignMessage = ({
+    publicAddress,
+    nonce
+  }: {
+    publicAddress: string;
+    nonce: string;
+  }) => {
+    return new Promise<{
+      publicAddress: string;
+      signature: string;
+    }>((resolve, reject) =>
       web3.personal.sign(
         web3.fromUtf8(`I am signing my one-time nonce: ${nonce}`),
         publicAddress,
-        (err, signature) => {
+        (err: Error, signature: string) => {
           if (err) return reject(err);
           return resolve({ publicAddress, signature });
         }
@@ -74,7 +95,7 @@ class Login extends Component {
     );
   };
 
-  handleSignup = publicAddress =>
+  handleSignup = (publicAddress: string) => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
       body: JSON.stringify({ publicAddress }),
       headers: {
@@ -82,14 +103,16 @@ class Login extends Component {
       },
       method: 'POST'
     }).then(response => response.json());
+  };
 
   render() {
     const { loading } = this.state;
     return (
       <div>
         <p>
-          Please select your login method.<br />For the purpose of this demo,
-          only MetaMask login is implemented.
+          Please select your login method.
+          <br />
+          For the purpose of this demo, only MetaMask login is implemented.
         </p>
         <button className="Login-button Login-mm" onClick={this.handleClick}>
           {loading ? 'Loading...' : 'Login with MetaMask'}
@@ -104,5 +127,3 @@ class Login extends Component {
     );
   }
 }
-
-export default Login;

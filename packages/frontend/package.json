@@ -4,21 +4,31 @@
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
   "description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
   "license": "MIT",
-  "main": "lib",
+  "main": "build",
   "private": true,
   "repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "deploy": "yarn build && firebase deploy"
+    "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/jwt-decode": "^2.2.1",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.4",
+    "@types/web3": "^1.0.18",
     "jwt-decode": "^2.2.0",
-    "react": "^16.2.0",
-    "react-blockies": "^1.2.2",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1",
-    "web3": "^0.20.6"
-  }
+    "react": "^16.8.6",
+    "react-blockies": "^1.4.1",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8",
+    "web3": "^0.20.7"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

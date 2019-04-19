@@ -1,22 +1,30 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 
-import Login from '../Login';
+import { Login } from '../Login';
 import logo from './logo.svg';
-import Profile from '../Profile/Profile';
+import { Profile } from '../Profile/Profile';
+import { Auth } from '../types';
 import './App.css';
 
-const LS_KEY = 'mm-login-demo:auth';
+const LS_KEY = 'login-with-metamask:auth';
 
-class App extends Component {
-  componentWillMount() {
+interface State {
+  auth?: Auth;
+}
+
+export class App extends React.Component<{}, State> {
+  state: State = {};
+
+  componentDidMount() {
     // Access token is stored in localstorage
-    const auth = JSON.parse(localStorage.getItem(LS_KEY));
+    const ls = window.localStorage.getItem(LS_KEY);
+    const auth = ls && JSON.parse(ls);
     this.setState({
       auth
     });
   }
 
-  handleLoggedIn = auth => {
+  handleLoggedIn = (auth: Auth) => {
     localStorage.setItem(LS_KEY, JSON.stringify(auth));
     this.setState({ auth });
   };
@@ -28,6 +36,7 @@ class App extends Component {
 
   render() {
     const { auth } = this.state;
+
     return (
       <div className="App">
         <header className="App-header">
@@ -45,5 +54,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
