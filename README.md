@@ -12,7 +12,7 @@ This demo is published as part of the corresponding blog article: ["One-Click Lo
 
 ## Live Demo
 
-The working app can be seen on Firebase: https://login-with-metamask.firebaseapp.com.
+The working app can be seen here: http://amaurymartiny.com/login-with-metamask-demo/.
 
 The backend is hosted on Now by Zeit: https://login-with-metamask.now.sh/api/users
 
