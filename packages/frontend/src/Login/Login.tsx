@@ -106,7 +106,7 @@ export class Login extends React.Component<Props> {
   };
 
   handleSignup = (publicAddress: string) => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
+    return fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
       body: JSON.stringify({ publicAddress }),
       headers: {
         'Content-Type': 'application/json'
