@@ -1,8 +1,16 @@
 # Login with MetaMask
 
-This demo is published as part of the corresponding blog article ["One-Click Login with Blockchain: a MetaMask Tutorial"](https://www.toptal.com/ethereum/one-click-login-flows-a-metamask-tutorial#utilize-unreal-developers-today).
+[![Build Status](https://travis-ci.org/amaurymartiny/login-with-metamask-demo.svg?branch=master)](https://travis-ci.org/amaurymartiny/login-with-metamask-demo)
+[![Dependencies Status](https://david-dm.org/amaurymartiny/login-with-metamask-demo/status.svg?label=abc&path=packages/frontend)](https://david-dm.org/amaurymartiny/login-with-metamask-demo?label=frontend&path=packages/backend)
+[![Dependencies Status](https://david-dm.org/amaurymartiny/login-with-metamask-demo/status.svg?path=packages/frontend)](https://david-dm.org/amaurymartiny/login-with-metamask-demo?label=frontend&path=packages/frontend)
 
-## Live Demo 🚀
+This demo is published as part of the corresponding blog article: ["One-Click Login with Blockchain: a MetaMask Tutorial"](https://www.toptal.com/ethereum/one-click-login-flows-a-metamask-tutorial).
+
+> ❗Important note. The article was written in March 2018, and in between, MetaMask introduced a [breaking change](https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8). The codebase has since then been updated to support the breaking change (as well as some other improvements such as TypeScript and updating to Web3 v1.0).
+
+> As such, the snippets in the article might not be exactly the same as the updated code today. The login flow however is still exactly the same. If you want to see the original code, please visit the [`original` branch](https://github.com/amaurymartiny/login-with-metamask-demo/tree/original).
+
+## Live Demo
 
 The working app can be seen on Firebase: https://login-with-metamask.firebaseapp.com.
 
@@ -12,16 +20,17 @@ The backend is hosted on Now by Zeit: https://login-with-metamask.now.sh/api/use
 
 ## Getting Started
 
-The app is made out of a `backend` which is a REST API written in Express, and a `frontend` which is a React single-page application. It's really a demo, so I tried to use as few libraries as possible.
+I use [lerna](https://github.com/lerna/lerna) to manage a monorepo of packages here. There are 2 packages: a [`backend`](https://github.com/amaurymartiny/login-with-metamask-demo/tree/master/packages/backend) which is a REST API written in Express, and a [`frontend`](https://github.com/amaurymartiny/login-with-metamask-demo/tree/master/packages/frontend) which is a React single-page application. It's really a demo, so I tried to use as few libraries as possible, and the most popular ones when possible.
 
-The simplest way to get started is to launch the demo using docker compose. Alternatively you could launch docker the containers manually, or run the node services using yarn.
+The simplest way to get started is to launch the demo using Docker Compose. Alternatively you could launch docker the containers manually, or run the node services using yarn.
 
 #### Launch the demo using Docker Compose:
+
 ```bash
 docker-compose up -d
 ```
 
-This will leave a the bakcend listening on localhost:8000 and the frontend on localhost:3000.
+This will leave a the bakcend listening on `localhost:8000` and the frontend on `localhost:3000`.
 
 #### Launching the demo using Docker:
 
@@ -41,29 +50,39 @@ docker build -t login-front .
 docker run -d -p 3000:3000 login-frontend
 ```
 
-You can then access the app on localhost:3000.
+You can then access the app on `localhost:3000`.
 
+#### Start the demo using Yarn:
 
-#### Start the backend using Yarn:
-```bash
-cd backend
-yarn install
-yarn dev # Will reload the node app on file changes
-```
-
-The backend should be running on localhost:8000.
-
-#### Start the frontend using Yarn:
+From the root folder of this repo, run
 
 ```bash
-cd frontend
-yarn install
-yarn start # Will refresh the page on file changes
+yarn install # Install the dependencies
+yarn start # Will launch the frontend and the backend at the same time
 ```
 
-* * *
+The backend should be running on `localhost:8000`, and the frontend on `localhost:3000`.
 
-This demo is published as part of the corresponding blog article at https://www.toptal.com/ethereum/one-click-login-flows-a-metamask-tutorial#utilize-unreal-developers-today.
-Visit https://www.toptal.com/blog and subscribe to our newsletter to read great posts!
+Alternatively, you can start the frontend and the backend separately:
 
-If you liked this demo, I appreciate small donations. 0xa395447BF15f7525484C0378c76627D45ADE0B96
+```bash
+# Start the backend
+cd packages/backend
+yarn start
+
+# Start the frontend
+cd packages/frontend
+yarn start
+```
+
+## Tests
+
+Since this project is a demo, I haven't written any tests for it. Only code linting is performed, via prettier, which you can run using `yarn lint`.
+
+## Credits
+
+This demo is created by Amaury Martiny. If you liked this demo, I appreciate small donations. My Ethereum address is `0xa395447BF15f7525484C0378c76627D45ADE0B96`.
+
+---
+
+This demo is published as part of the corresponding blog article at [https://www.toptal.com/ethereum/one-click-login-flows-a-metamask-tutorial](https://www.toptal.com/ethereum/one-click-login-flows-a-metamask-tutorial).
