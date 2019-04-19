@@ -1,0 +1,26 @@
+{
+  "name": "login-with-metamask",
+  "version": "1.0.1",
+  "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+  "description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
+  "license": "MIT",
+  "private": true,
+  "repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build": "lerna exec yarn build --parallel",
+    "lint": "lerna exec yarn lint --parallel",
+    "start": "lerna exec yarn start --parallel",
+    "test": "lerna exec yarn test --parallel"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "lerna": "^3.13.3",
+    "prettier": "^1.17.0",
+    "typescript": "^3.4.3"
+  }
+}

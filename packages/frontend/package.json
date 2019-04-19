@@ -1,0 +1,35 @@
+{
+  "name": "@login-with-metamask/frontend",
+  "version": "1.0.1",
+  "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+  "description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
+  "license": "MIT",
+  "main": "build",
+  "private": true,
+  "repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "prettier \"src/**/*.{ts,tsx}\" --check",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/jwt-decode": "^2.2.1",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.4",
+    "@types/web3": "^1.0.18",
+    "jwt-decode": "^2.2.0",
+    "react": "^16.8.6",
+    "react-blockies": "^1.4.1",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8",
+    "web3": "^1.0.0-beta.52"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
