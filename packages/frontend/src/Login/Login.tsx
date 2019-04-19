@@ -48,7 +48,7 @@ export class Login extends React.Component<Props> {
         // with the injected provider given by MetaMask
         web3 = new Web3((window as any).ethereum);
       } catch (error) {
-        window.alert('You need t to allow');
+        window.alert('You need to allow MetaMask.');
         return;
       }
     }
@@ -92,13 +92,17 @@ export class Login extends React.Component<Props> {
     publicAddress: string;
     nonce: string;
   }) => {
-    // @ts-ignore
-    const signature = await web3!.eth.personal.sign(
-      `I am signing my one-time nonce: ${nonce}`,
-      publicAddress
-    );
+    try {
+      const signature = await web3!.eth.personal.sign(
+        `I am signing my one-time nonce: ${nonce}`,
+        publicAddress,
+        ''
+      );
 
-    return { publicAddress, signature };
+      return { publicAddress, signature };
+    } catch (err) {
+      throw new Error('You need to sign the message to be able to log in.');
+    }
   };
 
   handleSignup = (publicAddress: string) => {

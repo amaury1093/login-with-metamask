@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Blockies from 'react-blockies';
+import Blockies from 'react-blockies';
 
 import { Auth } from '../types';
 import './Profile.css';

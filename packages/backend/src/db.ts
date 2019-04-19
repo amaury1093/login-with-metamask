@@ -31,7 +31,8 @@ User.init(
   },
   {
     modelName: 'user',
-    sequelize // This bit is important
+    sequelize, // This bit is important
+    timestamps: false
   }
 );
 
