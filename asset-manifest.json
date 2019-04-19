@@ -1,14 +1,14 @@
 {
-  "main.css": "/static/css/main.4792511f.chunk.css",
-  "main.js": "/static/js/main.76fa071d.chunk.js",
-  "main.js.map": "/static/js/main.76fa071d.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.9bc9ae28.chunk.js": "/static/js/2.9bc9ae28.chunk.js",
-  "static/js/2.9bc9ae28.chunk.js.map": "/static/js/2.9bc9ae28.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.cf6fce98f6166bfd39e3e80ab4656465.js": "/precache-manifest.cf6fce98f6166bfd39e3e80ab4656465.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.4792511f.chunk.css.map": "/static/css/main.4792511f.chunk.css.map",
-  "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+  "main.css": "/login-with-metamask-demo/static/css/main.4792511f.chunk.css",
+  "main.js": "/login-with-metamask-demo/static/js/main.76fa071d.chunk.js",
+  "main.js.map": "/login-with-metamask-demo/static/js/main.76fa071d.chunk.js.map",
+  "runtime~main.js": "/login-with-metamask-demo/static/js/runtime~main.92325057.js",
+  "runtime~main.js.map": "/login-with-metamask-demo/static/js/runtime~main.92325057.js.map",
+  "static/js/2.3996952a.chunk.js": "/login-with-metamask-demo/static/js/2.3996952a.chunk.js",
+  "static/js/2.3996952a.chunk.js.map": "/login-with-metamask-demo/static/js/2.3996952a.chunk.js.map",
+  "index.html": "/login-with-metamask-demo/index.html",
+  "precache-manifest.e2991246b3013fd05685c76f8c1b05ff.js": "/login-with-metamask-demo/precache-manifest.e2991246b3013fd05685c76f8c1b05ff.js",
+  "service-worker.js": "/login-with-metamask-demo/service-worker.js",
+  "static/css/main.4792511f.chunk.css.map": "/login-with-metamask-demo/static/css/main.4792511f.chunk.css.map",
+  "static/media/logo.svg": "/login-with-metamask-demo/static/media/logo.5d5d9eef.svg"
 }
