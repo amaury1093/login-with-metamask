@@ -1,0 +1,21 @@
+name: Lint, test, and build
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install
+      run: yarn install
+    - name: Lint
+      run: yarn lint
+    - name: Test
+      env:
+        CI: true
+      run: yarn test
+    - name: Build
+      run: yarn build
