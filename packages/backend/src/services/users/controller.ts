@@ -10,7 +10,7 @@ export const find = (req: Request, res: Response, next: NextFunction) => {
     };
 
   return User.findAll(whereClause)
-    .then(users => res.json(users))
+    .then((users: User[]) => res.json(users))
     .catch(next);
 };
 
@@ -22,7 +22,7 @@ export const get = (req: Request, res: Response, next: NextFunction) => {
     return res.status(401).send({ error: 'You can can only access yourself' });
   }
   return User.findByPk(req.params.userId)
-    .then(user => res.json(user))
+    .then((user?: User) => res.json(user))
     .catch(next);
 };
 
@@ -37,7 +37,7 @@ export const patch = (req: Request, res: Response, next: NextFunction) => {
     return res.status(401).send({ error: 'You can can only access yourself' });
   }
   return User.findByPk(req.params.userId)
-    .then(async user => {
+    .then((user?: User) => {
       if (!user) {
         return user;
       }
@@ -45,7 +45,7 @@ export const patch = (req: Request, res: Response, next: NextFunction) => {
       Object.assign(user, req.body);
       return user.save();
     })
-    .then(user => {
+    .then((user?: User) => {
       return user
         ? res.json(user)
         : res.status(401).send({

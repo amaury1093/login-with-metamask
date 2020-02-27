@@ -5,12 +5,12 @@
     "allowSyntheticDefaultImports": false,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
+    "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true
+    "resolveJsonModule": true
   },
   "include": ["src"]
 }

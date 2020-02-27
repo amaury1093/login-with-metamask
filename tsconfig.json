@@ -3,6 +3,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "jsx": "react",
+    "skipLibCheck": true,
     "target": "es5"
   }
 }
