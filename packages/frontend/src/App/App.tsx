@@ -1,10 +1,11 @@
-import * as React from 'react';
+import './App.css';
+
+import React from 'react';
 
 import { Login } from '../Login';
-import logo from './logo.svg';
 import { Profile } from '../Profile/Profile';
 import { Auth } from '../types';
-import './App.css';
+import logo from './logo.svg';
 
 const LS_KEY = 'login-with-metamask:auth';
 

@@ -1,7 +1,7 @@
-import * as ethUtil from 'ethereumjs-util';
-import * as sigUtil from 'eth-sig-util';
+import sigUtil from 'eth-sig-util';
+import ethUtil from 'ethereumjs-util';
 import { NextFunction, Request, Response } from 'express';
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 import { config } from '../../config';
 import { User } from '../../models/user.model';
@@ -18,7 +18,7 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
       ////////////////////////////////////////////////////
       // Step 1: Get the user with the given publicAddress
       ////////////////////////////////////////////////////
-      .then(user => {
+      .then((user?: User) => {
         if (!user)
           return res.status(401).send({
             error: `User with publicAddress ${publicAddress} is not found in database`
@@ -28,7 +28,7 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
       ////////////////////////////////////////////////////
       // Step 2: Verify digital signature
       ////////////////////////////////////////////////////
-      .then(user => {
+      .then((user?: User) => {
         if (!(user instanceof User)) {
           // Should not happen, we should have already sent the response
           throw new Error('User is not defined in "Verify digital signature".');
@@ -57,7 +57,7 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
       ////////////////////////////////////////////////////
       // Step 3: Generate a new nonce for the user
       ////////////////////////////////////////////////////
-      .then(user => {
+      .then((user?: User) => {
         if (!(user instanceof User)) {
           // Should not happen, we should have already sent the response
 
@@ -72,7 +72,7 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
       ////////////////////////////////////////////////////
       // Step 4: Create JWT
       ////////////////////////////////////////////////////
-      .then(user => {
+      .then((user: User) => {
         return new Promise<string>((resolve, reject) =>
           // https://github.com/auth0/node-jsonwebtoken
           jwt.sign(
@@ -93,7 +93,7 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
           )
         );
       })
-      .then(accessToken => res.json({ accessToken }))
+      .then((accessToken: string) => res.json({ accessToken }))
       .catch(next)
   );
 };

@@ -1,6 +1,9 @@
 {
+  "extends": "./node_modules/@amaurymartiny/tsconfig/tsconfig",
   "compilerOptions": {
-    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "skipLibCheck": true,
     "target": "es5"
   }
 }
