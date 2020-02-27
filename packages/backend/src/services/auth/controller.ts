@@ -1,7 +1,7 @@
-import * as ethUtil from 'ethereumjs-util';
-import * as sigUtil from 'eth-sig-util';
+import sigUtil from 'eth-sig-util';
+import ethUtil from 'ethereumjs-util';
 import { NextFunction, Request, Response } from 'express';
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 import { config } from '../../config';
 import { User } from '../../models/user.model';

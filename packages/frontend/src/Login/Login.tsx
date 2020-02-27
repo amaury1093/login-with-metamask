@@ -1,8 +1,9 @@
-import * as React from 'react';
+import './Login.css';
+
+import React from 'react';
 import Web3 from 'web3';
 
 import { Auth } from '../types';
-import './Login.css';
 
 interface Props {
   onLoggedIn: (auth: Auth) => void;
@@ -64,9 +65,7 @@ export class Login extends React.Component<Props> {
 
     // Look if user with current publicAddress is already present on backend
     fetch(
-      `${
-        process.env.REACT_APP_BACKEND_URL
-      }/users?publicAddress=${publicAddress}`
+      `${process.env.REACT_APP_BACKEND_URL}/users?publicAddress=${publicAddress}`
     )
       .then(response => response.json())
       // If yes, retrieve it. If no, create it.

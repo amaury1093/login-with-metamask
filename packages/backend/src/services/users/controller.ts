@@ -49,9 +49,7 @@ export const patch = (req: Request, res: Response, next: NextFunction) => {
       return user
         ? res.json(user)
         : res.status(401).send({
-            error: `User with publicAddress ${
-              req.params.userId
-            } is not found in database`
+            error: `User with publicAddress ${req.params.userId} is not found in database`
           });
     })
     .catch(next);

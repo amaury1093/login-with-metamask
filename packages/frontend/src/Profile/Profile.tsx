@@ -1,10 +1,10 @@
-import * as React from 'react';
+import './Profile.css';
+
+import jwtDecode from 'jwt-decode';
+import React from 'react';
 import Blockies from 'react-blockies';
 
 import { Auth } from '../types';
-import './Profile.css';
-
-const jwtDecode = require('jwt-decode');
 
 interface Props {
   auth: Auth;

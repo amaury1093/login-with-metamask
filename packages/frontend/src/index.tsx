@@ -1,8 +1,9 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { config as dotEnvConfig } from 'dotenv';
-
 import './index.css';
+
+import { config as dotEnvConfig } from 'dotenv';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import { App } from './App';
 
 // Load ENV variables
