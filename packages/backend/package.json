@@ -10,7 +10,6 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
-    "lint": "prettier 'src/**/*.ts' --check",
     "start": "ts-node --compiler-options '{\"target\": \"es6\"}' src",
     "test": "echo Skipped."
   },
