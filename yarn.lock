@@ -1593,10 +1593,10 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
   integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
 
-"@types/jsonwebtoken@^8.3.2":
-  version "8.3.7"
-  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.3.7.tgz#ab79ad55b9435834d24cca3112f42c08eedb1a54"
-  integrity sha512-B5SSifLkjB0ns7VXpOOtOUlynE78/hKcY8G8pOAhkLJZinwofIBYqz555nRj2W9iDWZqFhK5R+7NZDaRmKWAoQ==
+"@types/jsonwebtoken@^8.3.8":
+  version "8.3.8"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.3.8.tgz#b27c9156dde2049ae03e56528a53ef5a8294aa82"
+  integrity sha512-g2ke5+AR/RKYpQxd+HJ2yisLHGuOV0uourOcPtKlcT5Zqv4wFg9vKhFpXEztN4H/6Y6RSUKioz/2PTFPP30CTA==
   dependencies:
     "@types/node" "*"
 
