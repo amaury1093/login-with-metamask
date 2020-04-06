@@ -7,7 +7,7 @@ import { User } from './models';
 const sequelize = new Sequelize('login-with-metamask-database', '', undefined, {
   dialect: 'sqlite',
   storage: path.join(os.tmpdir(), 'db.sqlite'),
-  logging: false
+  logging: false,
 });
 
 // Init all models
@@ -16,23 +16,23 @@ User.init(
     nonce: {
       allowNull: false,
       type: INTEGER.UNSIGNED, // SQLITE will use INTEGER
-      defaultValue: () => Math.floor(Math.random() * 10000) // Initialize with a random nonce
+      defaultValue: (): number => Math.floor(Math.random() * 10000), // Initialize with a random nonce
     },
     publicAddress: {
       allowNull: false,
       type: STRING,
       unique: true,
-      validate: { isLowercase: true }
+      validate: { isLowercase: true },
     },
     username: {
       type: STRING,
-      unique: true
-    }
+      unique: true,
+    },
   },
   {
     modelName: 'user',
     sequelize, // This bit is important
-    timestamps: false
+    timestamps: false,
   }
 );
 

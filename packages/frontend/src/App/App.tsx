@@ -21,7 +21,7 @@ export class App extends React.Component<{}, State> {
     const ls = window.localStorage.getItem(LS_KEY);
     const auth = ls && JSON.parse(ls);
     this.setState({
-      auth
+      auth,
     });
   }
 

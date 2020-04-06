@@ -21,7 +21,7 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
       .then((user?: User) => {
         if (!user)
           return res.status(401).send({
-            error: `User with publicAddress ${publicAddress} is not found in database`
+            error: `User with publicAddress ${publicAddress} is not found in database`,
           });
         return user;
       })
@@ -41,7 +41,7 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
         const msgBufferHex = ethUtil.bufferToHex(Buffer.from(msg, 'utf8'));
         const address = sigUtil.recoverPersonalSignature({
           data: msgBufferHex,
-          sig: signature
+          sig: signature,
         });
 
         // The signature verification is successful if the address found with
@@ -79,8 +79,8 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
             {
               payload: {
                 id: user.id,
-                publicAddress
-              }
+                publicAddress,
+              },
             },
             config.secret,
             {},

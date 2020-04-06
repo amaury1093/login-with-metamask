@@ -8,7 +8,7 @@
   "private": true,
   "repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn start",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
     "start": "ts-node src",
     "test": "echo Skipped."

@@ -24,36 +24,36 @@ export class Profile extends React.Component<Props, State> {
   state: State = {
     loading: false,
     user: undefined,
-    username: ''
+    username: '',
   };
 
   componentDidMount() {
     const {
-      auth: { accessToken }
+      auth: { accessToken },
     } = this.props;
     const {
-      payload: { id }
+      payload: { id },
     } = jwtDecode(accessToken);
 
     fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${id}`, {
       headers: {
-        Authorization: `Bearer ${accessToken}`
-      }
+        Authorization: `Bearer ${accessToken}`,
+      },
     })
-      .then(response => response.json())
-      .then(user => this.setState({ user }))
+      .then((response) => response.json())
+      .then((user) => this.setState({ user }))
       .catch(window.alert);
   }
 
   handleChange = ({
-    target: { value }
+    target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ username: value });
   };
 
   handleSubmit = () => {
     const {
-      auth: { accessToken }
+      auth: { accessToken },
     } = this.props;
     const { user, username } = this.state;
 
@@ -70,13 +70,13 @@ export class Profile extends React.Component<Props, State> {
       body: JSON.stringify({ username }),
       headers: {
         Authorization: `Bearer ${accessToken}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      method: 'PATCH'
+      method: 'PATCH',
     })
-      .then(response => response.json())
-      .then(user => this.setState({ loading: false, user }))
-      .catch(err => {
+      .then((response) => response.json())
+      .then((user) => this.setState({ loading: false, user }))
+      .catch((err) => {
         window.alert(err);
         this.setState({ loading: false });
       });
@@ -85,10 +85,10 @@ export class Profile extends React.Component<Props, State> {
   render() {
     const {
       auth: { accessToken },
-      onLoggedOut
+      onLoggedOut,
     } = this.props;
     const {
-      payload: { publicAddress }
+      payload: { publicAddress },
     } = jwtDecode(accessToken);
     const { loading, user } = this.state;
 
