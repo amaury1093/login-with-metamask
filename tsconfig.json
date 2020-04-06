@@ -3,6 +3,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
+    "moduleResolution": "node",
     "skipLibCheck": true,
     "target": "es6"
   }
