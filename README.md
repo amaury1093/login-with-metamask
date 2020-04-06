@@ -9,11 +9,7 @@ This demo is published as part of the corresponding blog article: ["One-Click Lo
 
 > ❗Important note. The article was written in March 2018, and in between, MetaMask introduced a [breaking change](https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8). The codebase has since then been updated to support the breaking change. As such, the snippets in the article might not be exactly the same as the updated code today. The login flow however is still exactly the same. If you want to see the original code, please visit the [`original` branch](https://github.com/amaurymartiny/login-with-metamask-demo/tree/original).
 
-## Live Demo
-
-The working app can be seen here: http://amaurymartiny.com/login-with-metamask-demo/.
-
-The backend is hosted on Heroku: https://login-with-metamask-backend.herokuapp.com/api/users
+## Live Demo: http://amaurymartiny.com/login-with-metamask-demo/
 
 ![demo](https://uploads.toptal.io/blog/image/125794/toptal-blog-image-1522395423193-b3227ea1f43c6cbb9f78e090bd7bb2ee.gif)
 
