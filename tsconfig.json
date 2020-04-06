@@ -1,3 +1,9 @@
 {
   "extends": "./node_modules/@amaurymartiny/tsconfig/tsconfig",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "skipLibCheck": true,
+    "target": "es6"
+  }
 }

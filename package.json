@@ -12,6 +12,8 @@
     ]
   },
   "scripts": {
+    "deploy:backend": "git subtree push --prefix packages/backend heroku master",
+    "deploy:frontend": "cd packages/frontend && yarn build && gh-pages -d build",
     "lint": "tsc --noEmit && eslint . --ext js,ts,tsx",
     "start:backend": "cd packages/backend && yarn start",
     "start:frontend": "cd packages/frontend && yarn start",
@@ -21,7 +23,11 @@
   "devDependencies": {
     "@amaurymartiny/config": "^1.1.0",
     "@types/jest": "^25.2.1",
+    "gh-pages": "^2.2.0",
     "npm-run-all": "^4.1.5",
     "typescript": "^3.8.3"
+  },
+  "resolutions": {
+    "ethereumjs-util": ">=6.0.0"
   }
 }

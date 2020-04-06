@@ -1,5 +1,5 @@
-import sigUtil from 'eth-sig-util';
-import ethUtil from 'ethereumjs-util';
+import { recoverPersonalSignature } from 'eth-sig-util';
+import { bufferToHex } from 'ethereumjs-util';
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
@@ -42,8 +42,8 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
 
         // We now are in possession of msg, publicAddress and signature. We
         // will use a helper from eth-sig-util to extract the address from the signature
-        const msgBufferHex = ethUtil.bufferToHex(Buffer.from(msg, 'utf8'));
-        const address = sigUtil.recoverPersonalSignature({
+        const msgBufferHex = bufferToHex(Buffer.from(msg, 'utf8'));
+        const address = recoverPersonalSignature({
           data: msgBufferHex,
           sig: signature,
         });

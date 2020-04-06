@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "outDir": "build",
-    "strict": true
+    "strict": true,
+    "target": "es6"
   },
   "include": ["src/"]
 }
