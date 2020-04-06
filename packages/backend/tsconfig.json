@@ -3,7 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "outDir": "build",
-    "moduleResolution": "node",
+    "module": "commonjs",
     "strict": true,
     "target": "es6"
   },
