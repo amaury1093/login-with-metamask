@@ -6,7 +6,7 @@ export const find = (req: Request, res: Response, next: NextFunction) => {
   // If a query string ?publicAddress=... is given, then filter results
   const whereClause = req.query &&
     req.query.publicAddress && {
-      where: { publicAddress: req.query.publicAddress }
+      where: { publicAddress: req.query.publicAddress },
     };
 
   return User.findAll(whereClause)
@@ -22,7 +22,7 @@ export const get = (req: Request, res: Response, next: NextFunction) => {
     return res.status(401).send({ error: 'You can can only access yourself' });
   }
   return User.findByPk(req.params.userId)
-    .then((user?: User) => res.json(user))
+    .then((user: User | null) => res.json(user))
     .catch(next);
 };
 
@@ -37,7 +37,7 @@ export const patch = (req: Request, res: Response, next: NextFunction) => {
     return res.status(401).send({ error: 'You can can only access yourself' });
   }
   return User.findByPk(req.params.userId)
-    .then((user?: User) => {
+    .then((user: User | null) => {
       if (!user) {
         return user;
       }
@@ -45,11 +45,11 @@ export const patch = (req: Request, res: Response, next: NextFunction) => {
       Object.assign(user, req.body);
       return user.save();
     })
-    .then((user?: User) => {
+    .then((user: User | null) => {
       return user
         ? res.json(user)
         : res.status(401).send({
-            error: `User with publicAddress ${req.params.userId} is not found in database`
+            error: `User with publicAddress ${req.params.userId} is not found in database`,
           });
     })
     .catch(next);

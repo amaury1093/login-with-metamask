@@ -13,12 +13,12 @@ let web3: Web3 | undefined = undefined; // Will hold the web3 instance
 
 export class Login extends React.Component<Props> {
   state = {
-    loading: false // Loading button state
+    loading: false, // Loading button state
   };
 
   handleAuthenticate = ({
     publicAddress,
-    signature
+    signature,
   }: {
     publicAddress: string;
     signature: string;
@@ -26,10 +26,10 @@ export class Login extends React.Component<Props> {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/auth`, {
       body: JSON.stringify({ publicAddress, signature }),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      method: 'POST'
-    }).then(response => response.json());
+      method: 'POST',
+    }).then((response) => response.json());
 
   handleClick = async () => {
     const { onLoggedIn } = this.props;
@@ -67,9 +67,9 @@ export class Login extends React.Component<Props> {
     fetch(
       `${process.env.REACT_APP_BACKEND_URL}/users?publicAddress=${publicAddress}`
     )
-      .then(response => response.json())
+      .then((response) => response.json())
       // If yes, retrieve it. If no, create it.
-      .then(users =>
+      .then((users) =>
         users.length ? users[0] : this.handleSignup(publicAddress)
       )
       // Popup MetaMask confirmation modal to sign message
@@ -78,7 +78,7 @@ export class Login extends React.Component<Props> {
       .then(this.handleAuthenticate)
       // Pass accessToken back to parent component (to save it in localStorage)
       .then(onLoggedIn)
-      .catch(err => {
+      .catch((err) => {
         window.alert(err);
         this.setState({ loading: false });
       });
@@ -86,7 +86,7 @@ export class Login extends React.Component<Props> {
 
   handleSignMessage = async ({
     publicAddress,
-    nonce
+    nonce,
   }: {
     publicAddress: string;
     nonce: string;
@@ -108,10 +108,10 @@ export class Login extends React.Component<Props> {
     return fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
       body: JSON.stringify({ publicAddress }),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      method: 'POST'
-    }).then(response => response.json());
+      method: 'POST',
+    }).then((response) => response.json());
   };
 
   render() {
