@@ -18,17 +18,21 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
       ////////////////////////////////////////////////////
       // Step 1: Get the user with the given publicAddress
       ////////////////////////////////////////////////////
-      .then((user?: User) => {
-        if (!user)
-          return res.status(401).send({
+      .then((user: User | null) => {
+        if (!user) {
+          res.status(401).send({
             error: `User with publicAddress ${publicAddress} is not found in database`,
           });
+
+          return null;
+        }
+
         return user;
       })
       ////////////////////////////////////////////////////
       // Step 2: Verify digital signature
       ////////////////////////////////////////////////////
-      .then((user?: User) => {
+      .then((user: User | null) => {
         if (!(user instanceof User)) {
           // Should not happen, we should have already sent the response
           throw new Error('User is not defined in "Verify digital signature".');
@@ -49,15 +53,15 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
         if (address.toLowerCase() === publicAddress.toLowerCase()) {
           return user;
         } else {
-          return res
-            .status(401)
-            .send({ error: 'Signature verification failed' });
+          res.status(401).send({ error: 'Signature verification failed' });
+
+          return null;
         }
       })
       ////////////////////////////////////////////////////
       // Step 3: Generate a new nonce for the user
       ////////////////////////////////////////////////////
-      .then((user?: User) => {
+      .then((user: User | null) => {
         if (!(user instanceof User)) {
           // Should not happen, we should have already sent the response
 

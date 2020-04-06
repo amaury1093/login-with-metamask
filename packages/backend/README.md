@@ -1,5 +1,7 @@
 # @login-with-metamask/backend
 
+## Deploy to Heroku
+
 This Express app is deployed to Heroku via the following command (run from root folder):
 
 ```bash
