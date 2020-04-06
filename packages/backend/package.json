@@ -8,10 +8,11 @@
   "private": true,
   "repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
   "scripts": {
+    "build": "tsc",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
     "start": "ts-node src",
     "test": "echo Skipped.",
-    "web": "npm start"
+    "web": "node ./build"
   },
   "dependencies": {
     "@types/cors": "^2.8.4",
