@@ -13,7 +13,7 @@ This demo is published as part of the corresponding blog article: ["One-Click Lo
 
 The working app can be seen here: http://amaurymartiny.com/login-with-metamask-demo/.
 
-The backend is hosted on Now by Zeit: https://login-with-metamask.now.sh/api/users
+The backend is hosted on Heroku: https://login-with-metamask-backend.herokuapp.com/api/users
 
 ![demo](https://uploads.toptal.io/blog/image/125794/toptal-blog-image-1522395423193-b3227ea1f43c6cbb9f78e090bd7bb2ee.gif)
 
