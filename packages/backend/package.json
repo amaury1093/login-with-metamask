@@ -27,7 +27,7 @@
     "eth-sig-util": "^2.5.3",
     "ethereumjs-util": "^6.1.0",
     "express": "^4.16.4",
-    "express-jwt": "^5.3.1",
+    "express-jwt": "^5.3.3",
     "jsonwebtoken": "^8.5.1",
     "sequelize": "^5.21.6",
     "sqlite3": "^4.0.6"
