@@ -6,6 +6,9 @@ import ReactDOM from 'react-dom';
 
 import { App } from './App';
 
+
+
+
 // Load ENV variables
 dotEnvConfig({
   path:

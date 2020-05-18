@@ -1,15 +1,17 @@
 import './Login.css';
-
+import Portis from "@portis/web3";
 import React from 'react';
 import Web3 from 'web3';
 
 import { Auth } from '../types';
+const portis = new Portis("211b48db-e8cc-4b68-82ad-bf781727ea9e", "rinkeby");
+const web3 = new Web3(portis.provider);
 
 interface Props {
   onLoggedIn: (auth: Auth) => void;
 }
 
-let web3: Web3 | undefined = undefined; // Will hold the web3 instance
+// let web3: Web3 | undefined = undefined; // Will hold the web3 instance
 
 export class Login extends React.Component<Props> {
   state = {
@@ -36,7 +38,7 @@ export class Login extends React.Component<Props> {
 
     // Check if MetaMask is installed
     if (!(window as any).ethereum) {
-      window.alert('Please install MetaMask first.');
+      window.alert('Please install Portis first.');
       return;
     }
 
@@ -47,16 +49,16 @@ export class Login extends React.Component<Props> {
 
         // We don't know window.web3 version, so we use our own instance of Web3
         // with the injected provider given by MetaMask
-        web3 = new Web3((window as any).ethereum);
+        // web3 = new Web3((window as any).ethereum);
       } catch (error) {
-        window.alert('You need to allow MetaMask.');
+        window.alert('You need to allow Portis.');
         return;
       }
     }
 
     const coinbase = await web3.eth.getCoinbase();
     if (!coinbase) {
-      window.alert('Please activate MetaMask first.');
+      window.alert('Please activate Portis first.');
       return;
     }
 
@@ -119,19 +121,19 @@ export class Login extends React.Component<Props> {
     return (
       <div>
         <p>
-          Please select your login method.
+          Please login.
           <br />
-          For the purpose of this demo, only MetaMask login is implemented.
+          For the purpose of this demo, only Portis login is implemented.
         </p>
         <button className="Login-button Login-mm" onClick={this.handleClick}>
-          {loading ? 'Loading...' : 'Login with MetaMask'}
+          {loading ? 'Loading...' : 'Login with Portis'}
         </button>
-        <button className="Login-button Login-fb" disabled>
+        {/* <button className="Login-button Login-fb" disabled>
           Login with Facebook
-        </button>
-        <button className="Login-button Login-email" disabled>
+        </button> */}
+        {/* <button className="Login-button Login-email" disabled>
           Login with Email
-        </button>
+        </button> */}
       </div>
     );
   }
