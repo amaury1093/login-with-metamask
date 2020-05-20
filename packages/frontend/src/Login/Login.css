@@ -1,24 +1,189 @@
+.Intro{
+position: absolute;
+width: 173.24px;
+height: 31px;
+left: 633px;
+top: 146px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 19.2138px;
+line-height: 23px;
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #0A2A66;
+}
+.Khan{
+position: absolute;
+width: 350.14px;
+height: 57px;
+left: 545px;
+top: 173px;
+background: url(tumblr_inline_pcdui455cU1r8ovh1_540.png)
+}
+
+.Motto {
+position: absolute;
+width: 465px;
+height: 85px;
+left: 488px;
+top: 284px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #0A2A66;
+
+}
+
+.FundsD{
+  position: absolute;
+  width: 546px;
+  height: 31px;
+  left: 447px;
+  top: 416px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19.2138px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #0A2A66;
+}
+
+.Number01 {
+position: absolute;
+width: 492.41px;
+height: 70px;
+left: 474px;
+top: 449px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 72.4138px;
+line-height: 85px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: #0A2A66;
+
+}
+
+.E_outcome{
+  position: absolute;
+  width: 546px;
+  height: 31px;
+  left: 447px;
+  top: 558px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19.2138px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #0A2A66;
+}
+
+.Number02{
+position: absolute;
+width: 492.41px;
+height: 70px;
+left: 474px;
+top: 591px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 72.4138px;
+line-height: 85px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: #0A2A66;
+
+}
+
+.Side_note{
+  position: absolute;
+width: 546px;
+height: 17px;
+left: 447px;
+top: 669px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #1AAE9F;
+}
+
 .Login-button {
-  color: white;
-  display: block;
-  font-size: 16px;
-  height: 60px;
-  margin: 10px auto;
-  width: 300px;
+  position: static;
+  width: 79px;
+  height: 12px;
+  left: 13px;
+  top: 6px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10.5366px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #FFFFFF;
+  
+  /* Inside Auto Layout */
+  
+  flex: none;
+  order: 0;
+  align-self: center;
+  margin: 10px 0px;
 }
 
 .Login-button:hover {
   opacity: 0.9;
 }
 
-.Login-email {
-  background-color: darkgray;
-}
-
-.Login-fb {
-  background-color: rgb(72, 98, 163);
-}
-
 .Login-mm {
-  background-color: rgb(183, 0, 255);
+display: flex;
+flex-direction: row;
+padding: 6px 13px;
+
+position: absolute;
+width: 105px;
+height: 24px;
+left: 668px;
+top: 985px;
+
+background: #1AAE9F;
+border-radius: 2.92683px;
 }
+

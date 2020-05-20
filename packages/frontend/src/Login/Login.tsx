@@ -37,10 +37,10 @@ export class Login extends React.Component<Props> {
     const { onLoggedIn } = this.props;
 
     // Check if MetaMask is installed
-    if (!(window as any).ethereum) {
-      window.alert('Please install Portis first.');
-      return;
-    }
+    // if (!(window as any).ethereum) {
+    //   window.alert('Please install Portis first.');
+    //   return;
+    // }
 
     if (!web3) {
       try {
@@ -120,20 +120,20 @@ export class Login extends React.Component<Props> {
     const { loading } = this.state;
     return (
       <div>
-        <p>
-          Please login.
+        <p className = "Intro">Learn & Earn with</p>
+        <p className = "Khan"></p>
+        <p className = "Motto">An educated society is what moves the whole world forward – you are helping make global change one student at a time.</p>
+        <p className = "FundsD">Funds Currently Deposited in this Course</p>
+        <p className = "Number01">$ 10,009.135141</p>
+        <p className = "E_outcome">Expected Student Earnings After Completing the course</p>
+        <p className = "Number02">$ 75.135141</p>
+        <p className = "Side_note">*based on interest from the principal of each student & donor</p>
           <br />
-          For the purpose of this demo, only Portis login is implemented.
-        </p>
+        
         <button className="Login-button Login-mm" onClick={this.handleClick}>
-          {loading ? 'Loading...' : 'Login with Portis'}
+          {loading ? 'Loading...' : 'Pair Your Wallet'}
         </button>
-        {/* <button className="Login-button Login-fb" disabled>
-          Login with Facebook
-        </button> */}
-        {/* <button className="Login-button Login-email" disabled>
-          Login with Email
-        </button> */}
+    
       </div>
     );
   }
