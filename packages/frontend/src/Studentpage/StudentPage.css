@@ -78,7 +78,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
-  display: flex;
+  display: inline-block;
   align-items: center;
   letter-spacing: 0.02em;
   
@@ -86,13 +86,14 @@
   
   }
 .Confirm {
-position: static;
-width: 81px;
-height: 12px;
-left: 14px;
-top: 6px;
+position: absolute;
+/* width: 81px;
+height: 12px; */
+left: 729px;
+top: 510px;
 
 font-family: Roboto;
+display: inline;
 font-style: normal;
 font-weight: 500;
 font-size: 10.3019px;
@@ -107,8 +108,53 @@ color: #1AAE9F;
 
 /* Inside Auto Layout */
 
-flex: none;
-order: 0;
+/* flex: none; */
+/* order: 0; */
 align-self: center;
 margin: 10px 0px;
+}
+
+.Depositmotto2{
+position: absolute;
+width: 191px;
+height: 14px;
+left: 536px;
+top: 592px;
+
+font-family: Roboto;
+display: inline-block;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #0A2A66;
+
+}
+
+.Getitwith {
+position: absolute;
+width: 57px;
+height: 14px;
+left: 734px;
+top: 592px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+display: inline-block;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: 0.02em;
+text-decoration-line: underline;
+
+color: #1AAE9F;
+
 }
