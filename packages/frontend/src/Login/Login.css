@@ -65,13 +65,13 @@ color: #0A2A66;
 position: absolute;
 width: 492.41px;
 height: 70px;
-left: 474px;
+left: 534px;
 top: 449px;
 
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
-font-size: 72.4138px;
+font-size: 52.4138px;
 line-height: 85px;
 display: flex;
 align-items: center;
@@ -105,13 +105,13 @@ color: #0A2A66;
 position: absolute;
 width: 492.41px;
 height: 70px;
-left: 474px;
-top: 591px;
+left: 574px;
+top: 551px;
 
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
-font-size: 72.4138px;
+font-size: 52.4138px;
 line-height: 85px;
 display: flex;
 align-items: center;
@@ -124,7 +124,7 @@ color: #0A2A66;
 }
 
 .Side_note{
-  position: absolute;
+position: absolute;
 width: 546px;
 height: 17px;
 left: 447px;
@@ -141,6 +141,75 @@ text-align: center;
 letter-spacing: 0.02em;
 
 color: #1AAE9F;
+}
+
+.Line4{
+position: absolute;
+width: 485px;
+height: 0px;
+left: 478px;
+top: 739px;
+
+border: 1px solid #1AAE9F;
+}
+
+.Motto02{
+position: absolute;
+width: 546px;
+height: 31px;
+left: 447px;
+top: 779px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 19.2138px;
+line-height: 23px;
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #0A2A66;
+}
+
+.Number03 {
+  position: absolute;
+width: 492.41px;
+height: 70px;
+left: 634px;
+top: 812px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 72.4138px;
+line-height: 85px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: #0A2A66;
+
+}
+
+.Step01{
+  position: absolute;
+width: 546px;
+height: 31px;
+left: 447px;
+top: 932px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+font-size: 19.2138px;
+line-height: 23px;
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #0A2A66;
+
 }
 
 .Login-button {

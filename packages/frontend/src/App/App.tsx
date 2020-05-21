@@ -5,9 +5,9 @@ import React from 'react';
 import { Login } from '../Login';
 import { Profile } from '../Profile/Profile';
 import { Auth } from '../types';
-import logo from './logo.svg';
-// import {WalletPairing} from '../WalletPairing/WalletPairing';
+
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import StudentPage from '../Studentpage/StudentPage';
 
 const LS_KEY = 'login-with-metamask:auth';
 
@@ -43,13 +43,11 @@ export class App extends React.Component<{}, State> {
     return (
    
 <Switch>
-  <Route
-  path='/login'
+  <Route path='/login'
   render={() => (<Login onLoggedIn={this.handleLoggedIn} />)}
       />
-  <Route
-  path = '/walletpairing'
-/>
+  <Route path = '/studentpage'> <StudentPage/>
+</Route>
   </Switch>
         // <div className="App">
         //   <header className="App-header">
