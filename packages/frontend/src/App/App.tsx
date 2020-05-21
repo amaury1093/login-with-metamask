@@ -5,9 +5,9 @@ import React from 'react';
 import { Login } from '../Login';
 import { Profile } from '../Profile/Profile';
 import { Auth } from '../types';
-import logo from './logo.svg';
-// import {WalletPairing} from '../WalletPairing/WalletPairing';
-// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import StudentPage from '../Studentpage/StudentPage';
 
 const LS_KEY = 'login-with-metamask:auth';
 
@@ -41,22 +41,28 @@ export class App extends React.Component<{}, State> {
     const { auth } = this.state;
 
     return (
-      // <Router>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to Login with Portis Demo</h1>
-          </header>
-          <div className="App-intro">
-            {auth ? (
-              <Profile auth={auth} onLoggedOut={this.handleLoggedOut} />
-            ) : (
-              <Login onLoggedIn={this.handleLoggedIn} />
-            )}
-          </div>
-          {/* < Route path = '/walletpairing' component ={WalletPairing} /> */}
-        </div>
-      //  </Router>  
+   
+<Switch>
+  <Route path='/login'
+  render={() => (<Login onLoggedIn={this.handleLoggedIn} />)}
+      />
+  <Route path = '/studentpage'> <StudentPage/>
+</Route>
+  </Switch>
+        // <div className="App">
+        //   <header className="App-header">
+        //     <img src={logo} className="App-logo" alt="logo" />
+        //     <h1 className="App-title">Welcome to Login with Portis Demo</h1>
+        //   </header>
+        //    <div className="App-intro">
+        //    {auth ? (
+        //    <Profile auth={auth} onLoggedOut={this.handleLoggedOut} />
+        //   ) : (
+        //    <Login onLoggedIn={this.handleLoggedIn} />
+        //    )}
+        //   </div>
+        // </div>
+       
     );
   }
 }

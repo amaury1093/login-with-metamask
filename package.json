@@ -29,5 +29,8 @@
   },
   "resolutions": {
     "ethereumjs-util": ">=6.0.0"
+  },
+  "dependencies": {
+    "@types/react-router-dom": "^5.1.5"
   }
 }

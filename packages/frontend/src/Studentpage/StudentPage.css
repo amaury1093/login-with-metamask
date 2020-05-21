@@ -1,0 +1,114 @@
+.identicon {
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.Intro{
+  position: absolute;
+  width: 173.24px;
+  height: 31px;
+  left: 633px;
+  top: 146px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19.2138px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #0A2A66;
+  }
+  .Khan{
+  position: absolute;
+  width: 350.14px;
+  height: 57px;
+  left: 545px;
+  top: 173px;
+  background: url(tumblr_inline_pcdui455cU1r8ovh1_540.png)
+  }
+  
+  .Motto {
+  position: absolute;
+  width: 465px;
+  height: 85px;
+  left: 488px;
+  top: 284px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #0A2A66;
+  
+  }
+
+  .Step01student{
+    position: absolute;
+    width: 536px;
+    height: 50px;
+    left: 452px;
+    top: 429px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 19.2138px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    
+    color: #0A2A66;
+  }
+
+.Depositmotto{
+  position: absolute;
+  width: 135px;
+  height: 20px;
+  left: 579px;
+  top: 510px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  
+  color: #0A2A66;
+  
+  }
+.Confirm {
+position: static;
+width: 81px;
+height: 12px;
+left: 14px;
+top: 6px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 10.3019px;
+line-height: 12px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #1AAE9F;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+align-self: center;
+margin: 10px 0px;
+}
