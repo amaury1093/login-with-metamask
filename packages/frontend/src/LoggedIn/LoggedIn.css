@@ -86,32 +86,46 @@
   
   }
 .Confirm {
+  
+  position: static;
+  width: 51px;
+  height: 12px;
+  left: 13px;
+  top: 6px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10.5366px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #FFFFFF;
+  
+  
+  /* Inside Auto Layout */
+  
+  flex: none;
+  order: 0;
+  align-self: center;
+  margin: 10px 0px;
+  
+border-radius: 2.92683px;
+display: flex;
+flex-direction: row;
+padding: 6px 13px;
+
 position: absolute;
-/* width: 81px;
-height: 12px; */
-left: 729px;
-top: 510px;
+width: 77px;
+height: 24px;
+left: 807px;
+top: 508px;
 
-font-family: Roboto;
-display: inline;
-font-style: normal;
-font-weight: 500;
-font-size: 10.3019px;
-line-height: 12px;
-/* identical to box height */
-
-text-align: center;
-letter-spacing: 0.02em;
-
-color: #1AAE9F;
+background: #1AAE9F;
+border-radius: 2.92683px;
 
 
-/* Inside Auto Layout */
-
-/* flex: none; */
-/* order: 0; */
-align-self: center;
-margin: 10px 0px;
 }
 
 .Depositmotto2{
@@ -241,19 +255,7 @@ color: #0A2A66;
   text-align: center;
   letter-spacing: 0.02em;
   display: flex;
-  color: #5F5D5D;
-display: flex;
-flex-direction: row;
-padding: 6px 13px;
-
-position: absolute;
-width: 92px;
-height: 24px;
-left: 792px;
-top: 797px;
-
-background: #BBBBBB;
-border-radius: 2.92754px;
+  color: #FFFFFF;
   
   /* Inside Auto Layout */
   
@@ -261,6 +263,19 @@ border-radius: 2.92754px;
   order: 0;
   align-self: center;
   margin: 10px 0px;
+
+  display: flex;
+flex-direction: row;
+padding: 6px 13px;
+
+position: absolute;
+width: 62px;
+height: 24px;
+left: 820px;
+top: 797px;
+
+background: #1AAE9F;
+border-radius: 2.92683px;
 }
 
 .Module02{
@@ -298,7 +313,20 @@ text-align: center;
 letter-spacing: 0.02em;
 display: flex;
 
-color: #5F5D5D;
+color: #FFFFFF;
+
+display: flex;
+flex-direction: row;
+padding: 6px 13px;
+
+position: absolute;
+width: 62px;
+height: 24px;
+left: 820px;
+top: 856px;
+
+background: #1AAE9F;
+border-radius: 2.92683px;
 
 
 /* Inside Auto Layout */
@@ -343,7 +371,7 @@ color: #0A2A66;
   text-align: center;
   letter-spacing: 0.02em;
   display: flex;
-  color: #5F5D5D;
+  color: #FFFFFF;
 
   
   /* Inside Auto Layout */
@@ -352,6 +380,19 @@ color: #0A2A66;
   order: 0;
   align-self: center;
   margin: 10px 0px;
+
+  display: flex;
+flex-direction: row;
+padding: 6px 13px;
+
+position: absolute;
+width: 62px;
+height: 24px;
+left: 820px;
+top: 915px;
+
+background: #1AAE9F;
+border-radius: 2.92683px;
 }
 
 .Line3 {

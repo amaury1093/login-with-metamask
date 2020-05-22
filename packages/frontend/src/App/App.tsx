@@ -8,6 +8,7 @@ import { Auth } from '../types';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import StudentPage from '../Studentpage/StudentPage';
+import LoggedIn from '../LoggedIn/LoggedIn';
 
 const LS_KEY = 'login-with-metamask:auth';
 
@@ -48,6 +49,7 @@ export class App extends React.Component<{}, State> {
       />
   <Route path = '/studentpage'> <StudentPage/>
 </Route>
+<Route path = '/loggedin'> <LoggedIn/> </Route>
   </Switch>
         // <div className="App">
         //   <header className="App-header">
