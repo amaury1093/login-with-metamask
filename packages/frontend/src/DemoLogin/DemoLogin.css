@@ -173,15 +173,15 @@ color: #0A2A66;
 
 .Number03 {
 position: absolute;
-width: 492.41px;
+width: 1008px;
 height: 70px;
-left: 634px;
+left: 396px;
 top: 812px;
 
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
-font-size: 72.4138px;
+font-size: 52.4138px;
 line-height: 85px;
 display: flex;
 align-items: center;
@@ -194,7 +194,7 @@ color: #0A2A66;
 }
 
 .Step01{
-  position: absolute;
+position: absolute;
 width: 546px;
 height: 31px;
 left: 447px;
@@ -213,28 +213,29 @@ color: #0A2A66;
 }
 
 .Login-button {
-  position: static;
-  width: 79px;
-  height: 12px;
-  left: 13px;
-  top: 6px;
-  
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10.5366px;
-  line-height: 12px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  
-  color: #FFFFFF;
-  
-  /* Inside Auto Layout */
-  
-  flex: none;
-  order: 0;
-  align-self: center;
-  margin: 10px 0px;
+position: static;
+width: 79px;
+height: 12px;
+left: 13px;
+top: 6px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 10.5366px;
+line-height: 12px;
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #FFFFFF;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+align-self: center;
+margin: 10px 0px;
 }
 
 .Login-button:hover {

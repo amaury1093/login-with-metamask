@@ -7,8 +7,13 @@ import { Profile } from '../Profile/Profile';
 import { Auth } from '../types';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 import StudentPage from '../Studentpage/StudentPage';
 import LoggedIn from '../LoggedIn/LoggedIn';
+
+import { DemoLogin } from '../DemoLogin';
+
+
 
 const LS_KEY = 'login-with-metamask:auth';
 
@@ -44,12 +49,14 @@ export class App extends React.Component<{}, State> {
     return (
    
 <Switch>
-  <Route path='/login'
+<Route path='/login'
   render={() => (<Login onLoggedIn={this.handleLoggedIn} />)}
-      />
-  <Route path = '/studentpage'> <StudentPage/>
-</Route>
+      /> 
+<Route path = '/studentpage'> <StudentPage/> </Route>
 <Route path = '/loggedin'> <LoggedIn/> </Route>
+<Route path='/demologin'
+  render={() => (<DemoLogin onLoggedIn={this.handleLoggedIn} />)} 
+  />
   </Switch>
         // <div className="App">
         //   <header className="App-header">
