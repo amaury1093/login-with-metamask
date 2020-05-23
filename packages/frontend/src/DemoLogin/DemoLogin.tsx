@@ -1,17 +1,11 @@
-import './Login.css';
-import Portis from '@portis/web3';
+import './DemoLogin.css';
+import Portis from "@portis/web3";
 import React from 'react';
 import Web3 from 'web3';
 
 import { Auth } from '../types';
-<<<<<<< HEAD
-import { useHistory } from 'react-router';
 const portis = new Portis("211b48db-e8cc-4b68-82ad-bf781727ea9e", "rinkeby");
-=======
-const portis = new Portis('211b48db-e8cc-4b68-82ad-bf781727ea9e', 'rinkeby');
->>>>>>> d7ab624221ee94f734b6b281e8a391139bf2a24f
 const web3 = new Web3(portis.provider);
-
 
 interface Props {
   onLoggedIn: (auth: Auth) => void;
@@ -19,8 +13,7 @@ interface Props {
 
 // let web3: Web3 | undefined = undefined; // Will hold the web3 instance
 
-
-export class Login extends React.Component<Props> {
+export class DemoLogin extends React.Component<Props> {
   state = {
     loading: false, // Loading button state
   };
@@ -74,11 +67,7 @@ export class Login extends React.Component<Props> {
 
     // Look if user with current publicAddress is already present on backend
     fetch(
-<<<<<<< HEAD
-      `http://6c6dff12.ngrok.io/verifyusers${publicAddress}`
-=======
-      `${process.env.REACT_APP_BACKEND_URL}/verifyUser?publicAddress=${publicAddress}`
->>>>>>> d7ab624221ee94f734b6b281e8a391139bf2a24f
+      `http://751bc65f.ngrok.io/users?publicAddress=${publicAddress}`
     )
       .then((response) => response.json())
       // If yes, retrieve it. If no, create it.
@@ -106,7 +95,7 @@ export class Login extends React.Component<Props> {
   }) => {
     try {
       const signature = await web3!.eth.personal.sign(
-        `${nonce}`,
+        `I am signing my one-time nonce: ${nonce}`,
         publicAddress,
         '' // MetaMask will ignore the password argument here
       );
@@ -118,7 +107,7 @@ export class Login extends React.Component<Props> {
   };
 
   handleSignup = (publicAddress: string) => {
-    return fetch(`${process.env.REACT_APP_BACKEND_URL}/signUp`, {
+    return fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
       body: JSON.stringify({ publicAddress }),
       headers: {
         'Content-Type': 'application/json',
@@ -131,32 +120,26 @@ export class Login extends React.Component<Props> {
     const { loading } = this.state;
     return (
       <div>
-        <p className="Intro">Learn & Earn with</p>
-        <p className="Khan"></p>
-        <p className="Motto">
-          An educated society is what moves the whole world forward – you are
-          helping make global change one student at a time.
-        </p>
-        <p className="FundsD">Funds Currently Deposited in this Course</p>
+        <p className = "Intro">Learn & Earn with</p>
+        <p className = "Khan"></p>
+        <p className = "Motto">An educated society is what moves the whole world forward – you are helping make global change one student at a time.</p>
+        <p className = "FundsD">Funds Currently Deposited in this Course</p>
         <br />
-        <p className="Number01">$ 10,009.135141</p>
+        <p className = "Number01">$ 10,009.135141</p>
         <br />
-        <p className="E_outcome">
-          Expected Student Earnings After Completing the course
-        </p>
-        <p className="Number02">$ 75.135141</p>
-        <p className="Side_note">
-          *based on interest from the principal of each student & donor
-        </p>
-        <br />
-        <p className="Line4"></p>
-        <p className="Motto02">All you need to deposit to get started</p>
-        <p className="Number03">$ 100</p>
-        <p className="Step01">Link Your Crypto Wallet with Learn & Earn</p>
-
+        <p className = "E_outcome">Expected Student Earnings After Completing the course</p>
+        <p className = "Number02">$ 75.135141</p>
+        <p className = "Side_note">*based on interest from the principal of each student & donor</p>
+          <br />
+        <p className = "Line4"></p>
+        <p className = "Motto02">All you need to deposit to get started</p>
+        <p className = "Number03">Deposit Into A Savings Fund</p>
+        <p className = "Step01">Step 01 Link Your Crypto Wallet with Learn & Earn</p>
+        
         <button className="Login-button Login-mm" onClick={this.handleClick}>
           {loading ? 'Loading...' : 'Pair Your Wallet'}
         </button>
+    
       </div>
     );
   }

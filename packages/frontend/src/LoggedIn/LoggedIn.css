@@ -1,9 +1,9 @@
-.identiconA {
+.identicon {
   border-radius: 50%;
   vertical-align: middle;
 }
 
-.IntroA{
+.Intro{
   position: absolute;
   width: 173.24px;
   height: 31px;
@@ -20,7 +20,7 @@
   
   color: #0A2A66;
   }
-  .KhanA{
+  .Khan{
   position: absolute;
   width: 350.14px;
   height: 57px;
@@ -29,7 +29,7 @@
   background: url(tumblr_inline_pcdui455cU1r8ovh1_540.png)
   }
   
-  .MottoA {
+  .Motto {
   position: absolute;
   width: 465px;
   height: 85px;
@@ -48,7 +48,7 @@
   
   }
 
-  .Step01studentA{
+  .Step01student{
     position: absolute;
     width: 536px;
     height: 50px;
@@ -66,7 +66,7 @@
     color: #0A2A66;
   }
 
-.DepositmottoA{
+.Depositmotto{
   position: absolute;
   width: 135px;
   height: 20px;
@@ -85,36 +85,50 @@
   color: #0A2A66;
   
   }
-.ConfirmA {
+.Confirm {
+  
+  position: static;
+  width: 51px;
+  height: 12px;
+  left: 13px;
+  top: 6px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10.5366px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #FFFFFF;
+  
+  
+  /* Inside Auto Layout */
+  
+  flex: none;
+  order: 0;
+  align-self: center;
+  margin: 10px 0px;
+  
+border-radius: 2.92683px;
+display: flex;
+flex-direction: row;
+padding: 6px 13px;
+
 position: absolute;
-/* width: 81px;
-height: 12px; */
-left: 729px;
-top: 510px;
+width: 77px;
+height: 24px;
+left: 807px;
+top: 508px;
 
-font-family: Roboto;
-display: inline;
-font-style: normal;
-font-weight: 500;
-font-size: 10.3019px;
-line-height: 12px;
-/* identical to box height */
-
-text-align: center;
-letter-spacing: 0.02em;
-
-color: #1AAE9F;
+background: #1AAE9F;
+border-radius: 2.92683px;
 
 
-/* Inside Auto Layout */
-
-/* flex: none; */
-/* order: 0; */
-align-self: center;
-margin: 10px 0px;
 }
 
-.Depositmotto2A{
+.Depositmotto2{
 position: absolute;
 width: 191px;
 height: 14px;
@@ -136,7 +150,7 @@ color: #0A2A66;
 
 }
 
-.GetitwithA {
+.Getitwith {
 position: absolute;
 width: 57px;
 height: 14px;
@@ -206,7 +220,7 @@ letter-spacing: 0.02em;
 color: #0A2A66;
 }
 
-.Module01A {
+.Module01{
 position: absolute;
 width: 135px;
 height: 20px;
@@ -241,19 +255,7 @@ color: #0A2A66;
   text-align: center;
   letter-spacing: 0.02em;
   display: flex;
-  color: #5F5D5D;
-display: flex;
-flex-direction: row;
-padding: 6px 13px;
-
-position: absolute;
-width: 92px;
-height: 24px;
-left: 792px;
-top: 797px;
-
-background: #BBBBBB;
-border-radius: 2.92754px;
+  color: #FFFFFF;
   
   /* Inside Auto Layout */
   
@@ -261,9 +263,22 @@ border-radius: 2.92754px;
   order: 0;
   align-self: center;
   margin: 10px 0px;
+
+  display: flex;
+flex-direction: row;
+padding: 6px 13px;
+
+position: absolute;
+width: 62px;
+height: 24px;
+left: 820px;
+top: 797px;
+
+background: #1AAE9F;
+border-radius: 2.92683px;
 }
 
-.Module02A{
+.Module02{
   position: absolute;
 width: 135px;
 height: 20px;
@@ -282,7 +297,7 @@ letter-spacing: 0.02em;
 color: #0A2A66;
 }
 
-.Button02{
+.Button02 {
 position: absolute;
 width: 66px;
 height: 12px;
@@ -298,7 +313,20 @@ text-align: center;
 letter-spacing: 0.02em;
 display: flex;
 
-color: #5F5D5D;
+color: #FFFFFF;
+
+display: flex;
+flex-direction: row;
+padding: 6px 13px;
+
+position: absolute;
+width: 62px;
+height: 24px;
+left: 820px;
+top: 856px;
+
+background: #1AAE9F;
+border-radius: 2.92683px;
 
 
 /* Inside Auto Layout */
@@ -343,7 +371,7 @@ color: #0A2A66;
   text-align: center;
   letter-spacing: 0.02em;
   display: flex;
-  color: #5F5D5D;
+  color: #FFFFFF;
 
   
   /* Inside Auto Layout */
@@ -352,6 +380,19 @@ color: #0A2A66;
   order: 0;
   align-self: center;
   margin: 10px 0px;
+
+  display: flex;
+flex-direction: row;
+padding: 6px 13px;
+
+position: absolute;
+width: 62px;
+height: 24px;
+left: 820px;
+top: 915px;
+
+background: #1AAE9F;
+border-radius: 2.92683px;
 }
 
 .Line3 {
@@ -534,7 +575,7 @@ color: #0A2A66;
 }
 
 .Amount03 {
-position: absolute;
+  position: absolute;
 width: 204px;
 height: 29px;
 left: 678px;
