@@ -4,12 +4,7 @@ import React from 'react';
 import Web3 from 'web3';
 
 import { Auth } from '../types';
-<<<<<<< HEAD
-import { useHistory } from 'react-router';
-const portis = new Portis("211b48db-e8cc-4b68-82ad-bf781727ea9e", "rinkeby");
-=======
 const portis = new Portis('211b48db-e8cc-4b68-82ad-bf781727ea9e', 'rinkeby');
->>>>>>> d7ab624221ee94f734b6b281e8a391139bf2a24f
 const web3 = new Web3(portis.provider);
 
 
@@ -74,11 +69,7 @@ export class Login extends React.Component<Props> {
 
     // Look if user with current publicAddress is already present on backend
     fetch(
-<<<<<<< HEAD
-      `http://6c6dff12.ngrok.io/verifyusers${publicAddress}`
-=======
       `${process.env.REACT_APP_BACKEND_URL}/verifyUser?publicAddress=${publicAddress}`
->>>>>>> d7ab624221ee94f734b6b281e8a391139bf2a24f
     )
       .then((response) => response.json())
       // If yes, retrieve it. If no, create it.

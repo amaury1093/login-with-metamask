@@ -71,7 +71,7 @@
   width: 135px;
   height: 20px;
   left: 579px;
-  top: 510px;
+  top: 520px;
   
   font-family: Roboto;
   font-style: normal;
@@ -89,7 +89,7 @@
 position: absolute;
 /* width: 81px;
 height: 12px; */
-left: 729px;
+left: 792px;
 top: 510px;
 
 font-family: Roboto;
@@ -102,6 +102,7 @@ line-height: 12px;
 
 text-align: center;
 letter-spacing: 0.02em;
+padding: 6px 13px;
 
 color: #1AAE9F;
 
@@ -131,7 +132,6 @@ line-height: 14px;
 
 text-align: center;
 letter-spacing: 0.02em;
-
 color: #0A2A66;
 
 }
@@ -159,8 +159,8 @@ color: #1AAE9F;
 
 }
 
-.Portis {
-  position: absolute;
+.PortisA {
+position: absolute;
 width: 111px;
 height: 34px;
 left: 797px;
@@ -188,7 +188,7 @@ border: 1px solid #888888;
 
 }
 
-.Step02student {
+.Step02studentA {
   position: absolute;
 width: 327px;
 height: 46px;
@@ -226,22 +226,8 @@ color: #0A2A66;
 
 }
 
-.Button01 {
-  position: absolute;
-  width: 66px;
-  height: 12px;
-  left: 750px;
-  top: 799px;
-  
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10.5391px;
-  line-height: 12px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  display: flex;
-  color: #5F5D5D;
+.Button01A {
+
 display: flex;
 flex-direction: row;
 padding: 6px 13px;
@@ -254,17 +240,42 @@ top: 797px;
 
 background: #BBBBBB;
 border-radius: 2.92754px;
-  
-  /* Inside Auto Layout */
-  
-  flex: none;
-  order: 0;
-  align-self: center;
-  margin: 10px 0px;
+
+flex: none;
+order: 0;
+align-self: center;
+margin: 10px 0px;
+
+}
+
+.ButtonText01B {
+/* Take the Test */
+position: absolute;
+width: 66px;
+height: 12px;
+left: 806px;
+top: 803px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 10.5391px;
+line-height: 12px;
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #5F5D5D;
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+align-self: center;
+margin: 10px 0px;
 }
 
 .Module02A{
-  position: absolute;
+position: absolute;
 width: 135px;
 height: 20px;
 left: 579px;
@@ -282,34 +293,48 @@ letter-spacing: 0.02em;
 color: #0A2A66;
 }
 
-.Button02{
-position: absolute;
-width: 66px;
-height: 12px;
-left: 750px;
-top: 857px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 10.5391px;
-line-height: 12px;
-text-align: center;
-letter-spacing: 0.02em;
-display: flex;
-
-color: #5F5D5D;
-
-
-/* Inside Auto Layout */
+.Button02A{
+  display: flex;
+  flex-direction: row;
+  padding: 6px 13px;
+  
+  position: absolute;
+  width: 92px;
+  height: 24px;
+  left: 792px;
+  top: 857px;
+  
+  background: #BBBBBB;
+  border-radius: 2.92754px;
 
 flex: none;
 order: 0;
 align-self: center;
 margin: 10px 0px;
+
 }
 
-.Module03{
+.ButtonText02B {
+  /* Take the Test */
+  position: absolute;
+  width: 66px;
+  height: 12px;
+  left: 806px;
+  top: 863px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10.5391px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #5F5D5D;
+  
+}
+
+.Module03A {
 position: absolute;
 width: 135px;
 height: 20px;
@@ -328,22 +353,7 @@ letter-spacing: 0.02em;
 color: #0A2A66;
 }
 
-.Button03 {
-  position: absolute;
-  width: 66px;
-  height: 12px;
-  left: 750px;
-  top: 916px;
-  
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 10.5391px;
-  line-height: 12px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  display: flex;
-  color: #5F5D5D;
+.Button03A {
 
   
   /* Inside Auto Layout */
@@ -352,9 +362,45 @@ color: #0A2A66;
   order: 0;
   align-self: center;
   margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  padding: 6px 13px;
+  
+  position: absolute;
+  width: 92px;
+  height: 24px;
+  left: 792px;
+  top: 916px;
+  
+  background: #BBBBBB;
+  border-radius: 2.92754px;
+  
+  flex: none;
+  order: 0;
+  align-self: center;
+  margin: 10px 0px;
+
 }
 
-.Line3 {
+.ButtonText03B {
+  position: absolute;
+  width: 66px;
+  height: 12px;
+  left: 806px;
+  top:  922px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10.5391px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #5F5D5D;
+}
+
+.Line3A {
 position: absolute;
 width: 462px;
 height: 0px;
@@ -364,7 +410,7 @@ top: 999px;
 border: 1px solid #888888;
 }
 
-.ArtHistory{
+.ArtHistoryA {
 
 position: absolute;
 width: 204px;
@@ -385,7 +431,7 @@ font-feature-settings: 'pnum' on, 'lnum' on;
 color: #0A2A66;
 }
 
-.DaysLeft{
+.DaysLeftA {
 position: absolute;
 width: 177px;
 height: 14px;
@@ -406,7 +452,7 @@ color: #0A2A66;
 
 }
 
-.DaysHours {
+.DaysHoursA {
   position: absolute;
 width: 229px;
 height: 21px;
@@ -429,7 +475,7 @@ color: #0A2A66;
 
 }
 
-.DepositedPool {
+.DepositedPoolA {
   position: absolute;
 width: 177px;
 height: 14px;
@@ -449,7 +495,7 @@ letter-spacing: 0.02em;
 color: #0A2A66;
 }
 
-.Amount01 {
+.Amount01A {
   position: absolute;
 width: 204px;
 height: 29px;
@@ -471,7 +517,7 @@ color: #0A2A66;
 
 }
 
-.Accrued {
+.AccruedA {
   position: absolute;
   width: 177px;
   height: 14px;
@@ -492,7 +538,7 @@ color: #0A2A66;
   
 }
 
-.Amount02 {
+.Amount02A {
   position: absolute;
 width: 204px;
 height: 29px;
@@ -513,7 +559,7 @@ font-feature-settings: 'pnum' on, 'lnum' on;
 color: #0A2A66;
 }
 
-.FundsDeposited {
+.FundsDepositedA {
   position: absolute;
 width: 177px;
 height: 14px;
@@ -533,7 +579,7 @@ letter-spacing: 0.02em;
 color: #0A2A66;
 }
 
-.Amount03 {
+.Amount03A {
 position: absolute;
 width: 204px;
 height: 29px;
