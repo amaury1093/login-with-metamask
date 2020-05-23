@@ -4,14 +4,17 @@ import React from 'react';
 import Web3 from 'web3';
 
 import { Auth } from '../types';
+import { useHistory } from 'react-router';
 const portis = new Portis("211b48db-e8cc-4b68-82ad-bf781727ea9e", "rinkeby");
 const web3 = new Web3(portis.provider);
+
 
 interface Props {
   onLoggedIn: (auth: Auth) => void;
 }
 
 // let web3: Web3 | undefined = undefined; // Will hold the web3 instance
+
 
 export class Login extends React.Component<Props> {
   state = {
@@ -67,7 +70,7 @@ export class Login extends React.Component<Props> {
 
     // Look if user with current publicAddress is already present on backend
     fetch(
-      `http://751bc65f.ngrok.io/users?publicAddress=${publicAddress}`
+      `http://6c6dff12.ngrok.io/verifyusers${publicAddress}`
     )
       .then((response) => response.json())
       // If yes, retrieve it. If no, create it.
