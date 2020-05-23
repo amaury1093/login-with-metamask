@@ -10,6 +10,7 @@ import { Auth } from '../types';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import StudentPage from '../Studentpage/StudentPage';
 import LoggedIn from '../LoggedIn/LoggedIn';
+import { useHistory } from 'react-router';
 
 const LS_KEY = 'login-with-metamask:auth';
 
@@ -32,6 +33,11 @@ export class App extends React.Component<{}, State> {
   handleLoggedIn = (auth: Auth) => {
     localStorage.setItem(LS_KEY, JSON.stringify(auth));
     this.setState({ auth });
+
+    // @ts-ignore
+    window.location = './studentpage';
+    // localStorage.setItem(LS_KEY, JSON.stringify(auth));
+    // this.setState({ auth });
   };
 
   handleLoggedOut = () => {
