@@ -5,7 +5,7 @@ import React from 'react';
 import { Login } from '../Login';
 import { Profile } from '../Profile/Profile';
 import { Auth } from '../types';
-import { useHistory } from 'react-router';
+
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { StudentPage } from '../StudentPage/StudentPage';
 import {LoggedIn} from '../LoggedIn/LoggedIn';
@@ -31,10 +31,12 @@ export class App extends React.Component<{}, State> {
 
 
   handleLoggedIn = (auth: Auth) => {
-    const history = useHistory ();
+ 
     localStorage.setItem(LS_KEY, JSON.stringify(auth));
     this.setState({ auth });
-    history.push("/studentpage");
+     // @ts-ignore
+     window.location = './studentpage';
+   
   };
 
   handleLoggedOut = () => {
