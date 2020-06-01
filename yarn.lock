@@ -2943,10 +2943,15 @@ bn.js@4.11.6:
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.6.tgz#53344adb14617a13f6e8dd2ce28905d1c0ba3215"
   integrity sha1-UzRK2xRhehP26N0s4okF0cC6MhU=
 
-bn.js@4.11.8, bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.10.0, bn.js@^4.11.1, bn.js@^4.11.6, bn.js@^4.11.8, bn.js@^4.4.0:
+bn.js@4.11.8, bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.10.0, bn.js@^4.11.1, bn.js@^4.11.6, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
   integrity sha512-ItfYfPLkWHUjckQCk8xC+LwxgK8NYcXywGigJgSwOP8Y2iyWT4f2vsZnoOXTTbo+o5yXmIUJ4gn5538SO5S3gA==
+
+bn.js@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.1.2.tgz#c9686902d3c9a27729f43ab10f9d79c2004da7b0"
+  integrity sha512-40rZaf3bUNKTVYu9sIeeEGOg7g14Yvnj9kH7b50EiwX0Q7A6umbvfI5tvHaOERH0XigqKkfLkFQxzb4e6CIXnA==
 
 body-parser@1.19.0, body-parser@^1.16.0, body-parser@^1.18.3:
   version "1.19.0"
@@ -5058,12 +5063,12 @@ ethereumjs-tx@^2.1.1:
     ethereumjs-util "^6.0.0"
 
 ethereumjs-util@>=6.0.0, ethereumjs-util@^4.3.0, ethereumjs-util@^5.1.1, ethereumjs-util@^6.0.0, ethereumjs-util@^7.0.0:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/ethereumjs-util/-/ethereumjs-util-7.0.1.tgz#6545ec23924eb1e3bd476bfa1f90de5f87bdfbad"
-  integrity sha512-qp5ZwQEUC+ZV9ESeQT3gBHivGjygYVrNc2xR170HabUFQiOSb9t+Kby0FinOAPq+/pxKkiib8HfoIAy+BEi91Q==
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/ethereumjs-util/-/ethereumjs-util-7.0.2.tgz#7e0d9fcd225ece6e49ee4ea65609d124715f1d15"
+  integrity sha512-ATAP02eJLpAlWGfiKQddNrRfZpwXiTFhRN2EM/yLXMCdBW/xjKYblNKcx8GLzzrjXg0ymotck+lam1nuV90arQ==
   dependencies:
     "@types/bn.js" "^4.11.3"
-    bn.js "^4.11.8"
+    bn.js "^5.1.2"
     create-hash "^1.1.2"
     ethjs-util "0.1.6"
     keccak "^3.0.0"
@@ -11934,10 +11939,10 @@ trim-repeated@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
-ts-node@^8.10.1:
-  version "8.10.1"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.10.1.tgz#77da0366ff8afbe733596361d2df9a60fc9c9bd3"
-  integrity sha512-bdNz1L4ekHiJul6SHtZWs1ujEKERJnHs4HxN7rjTyyVOFf3HaJ6sLqe6aPG62XTzAB/63pKRh5jTSWL0D7bsvw==
+ts-node@^8.10.2:
+  version "8.10.2"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.10.2.tgz#eee03764633b1234ddd37f8db9ec10b75ec7fb8d"
+  integrity sha512-ISJJGgkIpDdBhWVu3jufsWpK3Rzo7bdiIXJjQc0ynKxVOVcg2oIrf2H2cejminGrptVc6q6/uynAHNCuWGbpVA==
   dependencies:
     arg "^4.1.0"
     diff "^4.0.1"
