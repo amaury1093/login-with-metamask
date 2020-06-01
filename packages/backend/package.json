@@ -25,7 +25,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "eth-sig-util": "^2.5.3",
-    "ethereumjs-util": "^7.0.0",
+    "ethereumjs-util": "^7.0.2",
     "express": "^4.16.4",
     "express-jwt": "^5.3.3",
     "jsonwebtoken": "^8.5.1",
