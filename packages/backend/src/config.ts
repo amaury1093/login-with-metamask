@@ -1,3 +1,5 @@
 export const config = {
-  secret: 'shhhh', // TODO Put in process.env
+  secret: 'shhhh',
+  algorithms: ['HS256'] // TODO Put in process.env
 };
+ 

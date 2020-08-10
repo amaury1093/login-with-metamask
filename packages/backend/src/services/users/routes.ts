@@ -13,7 +13,7 @@ userRouter.route('/').get(controller.find);
 /** Authenticated route */
 userRouter
   .route('/:userId')
-  .get(jwt({ secret: config.secret }), controller.get);
+  .get(jwt({ secret: config.secret, algorithms: config.algorithms }), controller.get);
 
 /** POST /api/users */
 userRouter.route('/').post(controller.create);
@@ -22,4 +22,4 @@ userRouter.route('/').post(controller.create);
 /** Authenticated route */
 userRouter
   .route('/:userId')
-  .patch(jwt({ secret: config.secret }), controller.patch);
+  .patch(jwt({ secret: config.secret, algorithms: config.algorithms }), controller.patch);
