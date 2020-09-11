@@ -2,7 +2,11 @@ import { NextFunction, Request, Response } from 'express';
 
 import { User } from '../../models/user.model';
 
-export const find = (req: Request, res: Response, next: NextFunction) => {
+export const find = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void | Response<unknown>> => {
   // If a query string ?publicAddress=... is given, then filter results
   const whereClause = req.query &&
     req.query.publicAddress && {
@@ -14,7 +18,11 @@ export const find = (req: Request, res: Response, next: NextFunction) => {
     .catch(next);
 };
 
-export const get = (req: Request, res: Response, next: NextFunction) => {
+export const get = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Response<any> | Promise<void | Response<any>> => {
   // AccessToken payload is in req.user.payload, especially its `id` field
   // UserId is the param in /users/:userId
   // We only allow user accessing herself, i.e. require payload.id==userId

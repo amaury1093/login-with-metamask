@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken';
 import { config } from '../../config';
 import { User } from '../../models/user.model';
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const create = (req: Request, res: Response, next: NextFunction) => {
   const { signature, publicAddress } = req.body;
   if (!signature || !publicAddress)

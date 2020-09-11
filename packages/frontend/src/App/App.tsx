@@ -16,7 +16,7 @@ interface State {
 export class App extends React.Component<{}, State> {
   state: State = {};
 
-  componentDidMount() {
+  componentDidMount(): void {
     // Access token is stored in localstorage
     const ls = window.localStorage.getItem(LS_KEY);
     const auth = ls && JSON.parse(ls);
@@ -25,17 +25,17 @@ export class App extends React.Component<{}, State> {
     });
   }
 
-  handleLoggedIn = (auth: Auth) => {
+  handleLoggedIn = (auth: Auth): void => {
     localStorage.setItem(LS_KEY, JSON.stringify(auth));
     this.setState({ auth });
   };
 
-  handleLoggedOut = () => {
+  handleLoggedOut = (): void => {
     localStorage.removeItem(LS_KEY);
     this.setState({ auth: undefined });
   };
 
-  render() {
+  render(): JSX.Element {
     const { auth } = this.state;
 
     return (

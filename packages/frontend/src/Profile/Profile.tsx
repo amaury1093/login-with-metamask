@@ -27,7 +27,7 @@ export class Profile extends React.Component<Props, State> {
     username: '',
   };
 
-  componentDidMount() {
+  componentDidMount(): void {
     const {
       auth: { accessToken },
     } = this.props;
@@ -47,7 +47,7 @@ export class Profile extends React.Component<Props, State> {
 
   handleChange = ({
     target: { value },
-  }: React.ChangeEvent<HTMLInputElement>) => {
+  }: React.ChangeEvent<HTMLInputElement>): void => {
     this.setState({ username: value });
   };
 

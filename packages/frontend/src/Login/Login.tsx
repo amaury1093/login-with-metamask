@@ -22,7 +22,7 @@ export class Login extends React.Component<Props> {
   }: {
     publicAddress: string;
     signature: string;
-  }) =>
+  }): Promise<any> =>
     fetch(`${process.env.REACT_APP_BACKEND_URL}/auth`, {
       body: JSON.stringify({ publicAddress, signature }),
       headers: {
@@ -31,7 +31,7 @@ export class Login extends React.Component<Props> {
       method: 'POST',
     }).then((response) => response.json());
 
-  handleClick = async () => {
+  handleClick = async (): Promise<void> => {
     const { onLoggedIn } = this.props;
 
     // Check if MetaMask is installed
@@ -90,7 +90,7 @@ export class Login extends React.Component<Props> {
   }: {
     publicAddress: string;
     nonce: string;
-  }) => {
+  }): Promise<unknown> => {
     try {
       const signature = await web3!.eth.personal.sign(
         `I am signing my one-time nonce: ${nonce}`,
@@ -104,7 +104,7 @@ export class Login extends React.Component<Props> {
     }
   };
 
-  handleSignup = (publicAddress: string) => {
+  handleSignup = (publicAddress: string): Promise<any> => {
     return fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
       body: JSON.stringify({ publicAddress }),
       headers: {
