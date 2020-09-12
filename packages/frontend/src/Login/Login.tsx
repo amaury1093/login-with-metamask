@@ -66,7 +66,7 @@ export class Login extends React.Component<Props> {
     // Look if user with current publicAddress is already present on backend
     fetch(
       `${process.env.REACT_APP_BACKEND_URL}/users?publicAddress=${publicAddress}`
-     ): RequestInit | undefined): Promise<Response>
+    )
       .then((response) => response.json())
       // If yes, retrieve it. If no, create it.
       .then((users) =>
