@@ -22,7 +22,7 @@ export const get = (
   req: Request,
   res: Response,
   next: NextFunction
-): Response<any> | Promise<void | Response<any>> => {
+): Response<void> | Promise<void | Response<any>> => {
   // AccessToken payload is in req.user.payload, especially its `id` field
   // UserId is the param in /users/:userId
   // We only allow user accessing herself, i.e. require payload.id==userId
@@ -34,12 +34,20 @@ export const get = (
     .catch(next);
 };
 
-export const create = (req: Request, res: Response, next: NextFunction) =>
+export const create = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void | Response<void>> =>
   User.create(req.body)
     .then((user: User) => res.json(user))
     .catch(next);
 
-export const patch = (req: Request, res: Response, next: NextFunction) => {
+export const patch = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Response<void> | Promise<void | Response<void>> => {
   // Only allow to fetch current user
   if ((req as any).user.payload.id !== +req.params.userId) {
     return res.status(401).send({ error: 'You can can only access yourself' });
