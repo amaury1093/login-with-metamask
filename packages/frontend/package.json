@@ -16,7 +16,7 @@
   "dependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/jwt-decode": "^2.2.1",
-    "@types/react": "^16.9.55",
+    "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
     "@types/web3": "^1.0.18",
     "jwt-decode": "^3.0.0",
