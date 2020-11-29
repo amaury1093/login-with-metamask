@@ -10,7 +10,6 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
-		"lint": "tsc --noEmit && eslint . --ext js,ts,tsx",
 		"heroku": "node ./build",
 		"start": "ts-node src"
 	},

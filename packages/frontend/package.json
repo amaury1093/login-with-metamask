@@ -10,7 +10,6 @@
 	"repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
 	"scripts": {
 		"build": "react-scripts build",
-		"lint": "tsc --noEmit && eslint . --ext js,ts,tsx",
 		"start": "react-scripts start"
 	},
 	"dependencies": {

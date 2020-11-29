@@ -1,5 +1,4 @@
 {
-	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"allowJs": false,
 		"forceConsistentCasingInFileNames": true,
@@ -11,7 +10,11 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"noFallthroughCasesInSwitch": true,
-		"jsx": "react-jsx"
+		"jsx": "react-jsx",
+		"esModuleInterop": true,
+		"strict": true,
+		"target": "es5",
+		"allowSyntheticDefaultImports": true
 	},
 	"include": ["src"]
 }
