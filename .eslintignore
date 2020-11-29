@@ -4,4 +4,4 @@
 **/generated/*
 **/lib/*
 **/node_modules/*
-.eslintrc.js
+**/.eslintrc.js

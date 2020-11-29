@@ -15,7 +15,7 @@ This demo is published as part of the corresponding blog article: ["One-Click Lo
 
 ## Getting Started
 
-I use [lerna](https://github.com/lerna/lerna) to manage a monorepo of packages here. There are 2 packages: a [`backend`](https://github.com/amaurymartiny/login-with-metamask-demo/tree/master/packages/backend) which is a REST API written in Express, and a [`frontend`](https://github.com/amaurymartiny/login-with-metamask-demo/tree/master/packages/frontend) which is a React single-page application. It's really a demo, so I tried to use as few libraries as possible, and the most popular ones when possible.
+There are 2 packages in this repo: a [`backend`](https://github.com/amaurymartiny/login-with-metamask-demo/tree/master/packages/backend) which is a REST API written in Express, and a [`frontend`](https://github.com/amaurymartiny/login-with-metamask-demo/tree/master/packages/frontend) which is a React single-page application. It's really a demo, so I tried to use as few libraries as possible, and the most popular ones when possible.
 
 The simplest way to get started is to launch the demo using Docker Compose. Alternatively you could launch docker the containers manually, or run the node services using yarn.
 
@@ -52,7 +52,10 @@ You can then access the app on `localhost:3000`.
 From the root folder of this repo, run
 
 ```bash
-yarn install # Install the dependencies
+yarn install # Install root dependencies (for TS & linting in your IDE)
+cd packages/backend && yarn install # Install backend packages
+cd ../frontend && yarn install # Install frontend packages
+cd ../.. # Go back to root folder
 yarn start # Will launch the frontend and the backend at the same time
 ```
 
@@ -76,7 +79,7 @@ Since this project is a demo, I haven't written any tests for it. Only code lint
 
 ## Credits
 
-If you liked this demo, I appreciate small donations. My Ethereum address is `0xa395447BF15f7525484C0378c76627D45ADE0B96`.
+If you liked this demo, I appreciate donations. My Ethereum address is `0xa395447BF15f7525484C0378c76627D45ADE0B96`.
 
 ---
 

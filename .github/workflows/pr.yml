@@ -11,13 +11,3 @@ jobs:
               run: |
                   yarn install
                   yarn lint
-    test:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - name: Run yarn test
-              env:
-                  CI: true
-              run: |
-                  yarn install
-                  yarn test

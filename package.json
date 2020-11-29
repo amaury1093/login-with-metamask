@@ -6,31 +6,18 @@
 	"license": "MIT",
 	"private": true,
 	"repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
-	"workspaces": {
-		"packages": [
-			"packages/*"
-		]
-	},
 	"scripts": {
 		"deploy:backend": "git push heroku `git subtree split --prefix packages/backend master`:master",
 		"deploy:frontend": "cd packages/frontend && yarn build && gh-pages -d build",
 		"lint": "tsc --noEmit && eslint . --ext js,ts,tsx",
 		"start:backend": "cd packages/backend && yarn start",
 		"start:frontend": "cd packages/frontend && yarn start",
-		"start": "run-p -l start:*",
-		"test": "yarn workspaces run test"
+		"start": "run-p -l start:*"
 	},
 	"devDependencies": {
 		"@amaurymartiny/config": "^1.3.3",
-		"@types/jest": "^26.0.15",
-		"eslint-config-prettier": "^6.15.0",
-		"eslint-plugin-prettier": "^3.1.4",
-		"eslint-plugin-simple-import-sort": "^6.0.1",
 		"gh-pages": "^3.1.0",
 		"npm-run-all": "^4.1.5",
 		"typescript": "^4.0.5"
-	},
-	"resolutions": {
-		"ethereumjs-util": ">=6.0.0"
 	}
 }

@@ -1,40 +1,43 @@
 {
-  "name": "@login-with-metamask/backend",
-  "version": "2.0.0",
-  "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
-  "description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
-  "license": "MIT",
-  "main": "lib",
-  "private": true,
-  "repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
-  "scripts": {
-    "build": "tsc",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
-    "heroku": "node ./build",
-    "start": "ts-node src",
-    "test": "echo Skipped."
-  },
-  "dependencies": {
-    "@types/bluebird": "^3.5.33",
-    "@types/cors": "^2.8.8",
-    "@types/eth-sig-util": "^2.1.0",
-    "@types/express": "^4.17.4",
-    "@types/express-jwt": "^0.0.42",
-    "@types/jsonwebtoken": "^8.5.0",
-    "@types/validator": "^13.1.0",
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
-    "eth-sig-util": "^3.0.0",
-    "ethereumjs-util": "^7.0.5",
-    "express": "^4.16.4",
-    "express-jwt": "^6.0.0",
-    "jsonwebtoken": "^8.5.1",
-    "sequelize": "^6.3.5",
-    "sqlite3": "^5.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.5"
-  }
+	"name": "@login-with-metamask/backend",
+	"version": "2.0.0",
+	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+	"description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
+	"license": "MIT",
+	"main": "lib",
+	"private": true,
+	"repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
+	"scripts": {
+		"build": "tsc",
+		"dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
+		"lint": "tsc --noEmit && eslint . --ext js,ts,tsx",
+		"heroku": "node ./build",
+		"start": "ts-node src"
+	},
+	"dependencies": {
+		"@types/bluebird": "^3.5.33",
+		"@types/cors": "^2.8.8",
+		"@types/eth-sig-util": "^2.1.0",
+		"@types/express": "^4.17.4",
+		"@types/express-jwt": "^0.0.42",
+		"@types/jsonwebtoken": "^8.5.0",
+		"@types/validator": "^13.1.0",
+		"body-parser": "^1.18.3",
+		"cors": "^2.8.5",
+		"eth-sig-util": "^3.0.0",
+		"ethereumjs-util": "^7.0.5",
+		"express": "^4.16.4",
+		"express-jwt": "^6.0.0",
+		"jsonwebtoken": "^8.5.1",
+		"sequelize": "^6.3.5",
+		"sqlite3": "^5.0.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.6",
+		"ts-node": "^9.0.0",
+		"typescript": "^4.0.5"
+	},
+	"resolutions": {
+		"ethereumjs-util": ">=6.0.0"
+	}
 }

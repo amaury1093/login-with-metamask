@@ -1,35 +1,38 @@
 {
-  "name": "@login-with-metamask/frontend",
-  "version": "2.0.0",
-  "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
-  "description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
-  "homepage": "http://amaurymartiny.com/login-with-metamask-demo",
-  "license": "MIT",
-  "main": "build",
-  "private": true,
-  "repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom"
-  },
-  "dependencies": {
-    "@types/dotenv": "^8.2.0",
-    "@types/jwt-decode": "^2.2.1",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^16.9.9",
-    "@types/web3": "^1.0.18",
-    "jwt-decode": "^3.0.0",
-    "react": "^17.0.1",
-    "react-blockies": "^1.4.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.1",
-    "web3": "^1.3.0"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+	"name": "@login-with-metamask/frontend",
+	"version": "2.0.0",
+	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+	"description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
+	"homepage": "http://amaurymartiny.com/login-with-metamask-demo",
+	"license": "MIT",
+	"main": "build",
+	"private": true,
+	"repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
+	"scripts": {
+		"build": "react-scripts build",
+		"lint": "tsc --noEmit && eslint . --ext js,ts,tsx",
+		"start": "react-scripts start"
+	},
+	"dependencies": {
+		"@types/dotenv": "^8.2.0",
+		"@types/jwt-decode": "^2.2.1",
+		"@types/react": "^17.0.0",
+		"@types/react-dom": "^16.9.9",
+		"@types/web3": "^1.0.18",
+		"jwt-decode": "^3.0.0",
+		"react": "^17.0.1",
+		"react-blockies": "^1.4.1",
+		"react-dom": "^17.0.1",
+		"react-scripts": "^4.0.1",
+		"web3": "^1.3.0"
+	},
+	"devDependencies": {
+		"typescript": "^4.1.2"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	]
 }
