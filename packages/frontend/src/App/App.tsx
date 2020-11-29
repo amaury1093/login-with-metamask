@@ -13,7 +13,7 @@ interface State {
 	auth?: Auth;
 }
 
-export class App extends React.Component<{}, State> {
+export class App extends React.Component<unknown, State> {
 	state: State = {};
 
 	componentDidMount() {

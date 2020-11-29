@@ -12,7 +12,7 @@
 		]
 	},
 	"scripts": {
-		"deploy:backend": "git subtree push --prefix packages/backend heroku master",
+		"deploy:backend": "git push heroku `git subtree split --prefix packages/backend master`:master",
 		"deploy:frontend": "cd packages/frontend && yarn build && gh-pages -d build",
 		"lint": "tsc --noEmit && eslint . --ext js,ts,tsx",
 		"start:backend": "cd packages/backend && yarn start",
