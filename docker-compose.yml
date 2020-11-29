@@ -1,15 +1,15 @@
 version: '3.5'
 #To rebuild images you must use `docker-compose build` or `docker-compose up --build`
 services:
-  backend:
-    build:
-      context: ./packages/backend
-    ports:
-      - '8000:8000'
-  frontend:
-    build:
-      context: ./packages/frontend
-    ports:
-      - '3000:3000'
-    depends_on:
-      - backend
+    backend:
+        build:
+            context: ./packages/backend
+        ports:
+            - '8000:8000'
+    frontend:
+        build:
+            context: ./packages/frontend
+        ports:
+            - '3000:3000'
+        depends_on:
+            - backend
