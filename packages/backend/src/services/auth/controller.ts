@@ -91,7 +91,9 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
 							},
 						},
 						config.secret,
-						{},
+						{
+							algorithm: config.algorithms[0],
+						},
 						(err, token) => {
 							if (err) {
 								return reject(err);
