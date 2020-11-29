@@ -15,7 +15,7 @@ This demo is published as part of the corresponding blog article: ["One-Click Lo
 
 ## Getting Started
 
-There are 2 packages in this repo: a [`backend`](https://github.com/amaurymartiny/login-with-metamask-demo/tree/master/packages/backend) which is a REST API written in Express, and a [`frontend`](https://github.com/amaurymartiny/login-with-metamask-demo/tree/master/packages/frontend) which is a React single-page application. It's really a demo, so I tried to use as few libraries as possible, and the most popular ones when possible.
+There are 2 packages in this repo: a [`backend`](./packages/backend) which is a REST API written in Express, and a [`frontend`](./packages/frontend) which is a React single-page application. It's really a demo, so I tried to use as few libraries as possible, and the most popular ones when possible.
 
 The simplest way to get started is to launch the demo using Docker Compose. Alternatively you could launch docker the containers manually, or run the node services using yarn.
 
