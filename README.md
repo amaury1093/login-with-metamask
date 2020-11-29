@@ -41,7 +41,7 @@ Build and launch the frontend:
 
 ```bash
 cd frontend
-docker build -t login-front .
+docker build -t login-frontend .
 docker run -d -p 3000:3000 login-frontend
 ```
 
