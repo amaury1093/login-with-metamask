@@ -1,22 +1,20 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "allowJs": false,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true
-  },
-  "include": [
-    "src"
-  ]
+	"compilerOptions": {
+		"allowJs": false,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"module": "esnext",
+		"moduleResolution": "node",
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"noFallthroughCasesInSwitch": true,
+		"jsx": "react-jsx",
+		"esModuleInterop": true,
+		"strict": true,
+		"target": "es5",
+		"allowSyntheticDefaultImports": true
+	},
+	"include": ["src"]
 }

@@ -1,7 +1,6 @@
-FROM node:8
-COPY package.json /app/package.json
-RUN cd /app && yarn install
+FROM node:12
 COPY . /app
+RUN cd /app && yarn install
 WORKDIR /app
 EXPOSE 8000/tcp
 CMD yarn start

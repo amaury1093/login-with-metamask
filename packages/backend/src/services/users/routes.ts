@@ -11,15 +11,11 @@ userRouter.route('/').get(controller.find);
 
 /** GET /api/users/:userId */
 /** Authenticated route */
-userRouter
-  .route('/:userId')
-  .get(jwt({ secret: config.secret }), controller.get);
+userRouter.route('/:userId').get(jwt(config), controller.get);
 
 /** POST /api/users */
 userRouter.route('/').post(controller.create);
 
 /** PATCH /api/users/:userId */
 /** Authenticated route */
-userRouter
-  .route('/:userId')
-  .patch(jwt({ secret: config.secret }), controller.patch);
+userRouter.route('/:userId').patch(jwt(config), controller.patch);
