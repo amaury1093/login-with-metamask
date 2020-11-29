@@ -92,6 +92,9 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
               if (err) {
                 return reject(err);
               }
+              if (!token){
+                return new Error('Empty token')
+              }
               return resolve(token);
             }
           )

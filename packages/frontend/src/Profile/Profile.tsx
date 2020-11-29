@@ -20,6 +20,13 @@ interface State {
   username: string;
 }
 
+interface JwtDecoded {
+  payload: {
+    id:string;
+    publicAddress: string;
+  }
+}
+
 export class Profile extends React.Component<Props, State> {
   state: State = {
     loading: false,
@@ -33,7 +40,7 @@ export class Profile extends React.Component<Props, State> {
     } = this.props;
     const {
       payload: { id },
-    } = jwtDecode(accessToken);
+    } = jwtDecode<JwtDecoded>(accessToken);
 
     fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${id}`, {
       headers: {
@@ -89,7 +96,7 @@ export class Profile extends React.Component<Props, State> {
     } = this.props;
     const {
       payload: { publicAddress },
-    } = jwtDecode(accessToken);
+    } = jwtDecode<JwtDecoded>(accessToken);
     const { loading, user } = this.state;
 
     const username = user && user.username;
