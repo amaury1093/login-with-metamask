@@ -10,4 +10,7 @@ jobs:
             - name: Run yarn lint
               run: |
                   yarn install
+                  cd packages/backend && yarn install
+                  cd ../frontend && yarn install
+                  cd ../..
                   yarn lint
