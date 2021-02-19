@@ -1,11 +1,11 @@
 {
 	"name": "login-with-metamask",
 	"version": "2.0.0",
-	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+	"author": "Amaury <amaurym10@protonmail.com>",
 	"description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
 	"license": "MIT",
 	"private": true,
-	"repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
+	"repository": "https://github.com/amaurym/login-with-metamask-demo.git",
 	"scripts": {
 		"deploy:backend": "git push heroku `git subtree split --prefix packages/backend master`:master",
 		"deploy:frontend": "cd packages/frontend && yarn build && gh-pages -d build",
@@ -15,7 +15,7 @@
 		"start": "run-p -l start:*"
 	},
 	"devDependencies": {
-		"@amaurymartiny/config": "^1.3.4",
+		"@amaurym/config": "^1.3.4",
 		"gh-pages": "^3.1.0",
 		"npm-run-all": "^4.1.5",
 		"typescript": "^4.1.5"

@@ -1,13 +1,13 @@
 {
 	"name": "@login-with-metamask/frontend",
 	"version": "2.0.0",
-	"author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+	"author": "Amaury <amaurym10@protonmail.com>",
 	"description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
-	"homepage": "http://amaurymartiny.com/login-with-metamask-demo",
+	"homepage": "http://amaurym.com/login-with-metamask-demo",
 	"license": "MIT",
 	"main": "build",
 	"private": true,
-	"repository": "https://github.com/amaurymartiny/login-with-metamask-demo.git",
+	"repository": "https://github.com/amaurym/login-with-metamask-demo.git",
 	"scripts": {
 		"build": "react-scripts build",
 		"start": "react-scripts start"
