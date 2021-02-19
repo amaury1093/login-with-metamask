@@ -1,5 +1,5 @@
 module.exports = {
-	...require('@amaurymartiny/eslintrc'),
+	...require('@amaurym/eslintrc'),
 	// FIXME Turn these rules on again.
 	rules: {
 		'@typescript-eslint/explicit-function-return-type': 'off',
