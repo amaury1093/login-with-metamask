@@ -1,7 +1,7 @@
 import './Profile.css';
 
 import jwtDecode from 'jwt-decode';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Blockies from 'react-blockies';
 
 import { Auth } from '../types';
@@ -27,17 +27,15 @@ interface JwtDecoded {
 	};
 }
 
-export class Profile extends React.Component<Props, State> {
-	state: State = {
+export const Profile = ({ auth, onLoggedOut }: Props): JSX.Element => {
+	const [state, setState] = useState<State>({
 		loading: false,
 		user: undefined,
 		username: '',
-	};
+	});
 
-	componentDidMount() {
-		const {
-			auth: { accessToken },
-		} = this.props;
+	useEffect(() => {
+		const { accessToken } = auth;
 		const {
 			payload: { id },
 		} = jwtDecode<JwtDecoded>(accessToken);
@@ -48,23 +46,21 @@ export class Profile extends React.Component<Props, State> {
 			},
 		})
 			.then((response) => response.json())
-			.then((user) => this.setState({ user }))
+			.then((user) => setState({ ...state, user }))
 			.catch(window.alert);
-	}
+	}, []);
 
-	handleChange = ({
+	const handleChange = ({
 		target: { value },
 	}: React.ChangeEvent<HTMLInputElement>) => {
-		this.setState({ username: value });
+		setState({ ...state, username: value });
 	};
 
-	handleSubmit = () => {
-		const {
-			auth: { accessToken },
-		} = this.props;
-		const { user, username } = this.state;
+	const handleSubmit = () => {
+		const { accessToken } = auth;
+		const { user, username } = state;
 
-		this.setState({ loading: true });
+		setState({ ...state, loading: true });
 
 		if (!user) {
 			window.alert(
@@ -82,46 +78,42 @@ export class Profile extends React.Component<Props, State> {
 			method: 'PATCH',
 		})
 			.then((response) => response.json())
-			.then((user) => this.setState({ loading: false, user }))
+			.then((user) => setState({ ...state, loading: false, user }))
 			.catch((err) => {
 				window.alert(err);
-				this.setState({ loading: false });
+				setState({ ...state, loading: false });
 			});
 	};
 
-	render() {
-		const {
-			auth: { accessToken },
-			onLoggedOut,
-		} = this.props;
-		const {
-			payload: { publicAddress },
-		} = jwtDecode<JwtDecoded>(accessToken);
-		const { loading, user } = this.state;
+	const { accessToken } = auth;
 
-		const username = user && user.username;
+	const {
+		payload: { publicAddress },
+	} = jwtDecode<JwtDecoded>(accessToken);
 
-		return (
-			<div className="Profile">
-				<p>
-					Logged in as <Blockies seed={publicAddress} />
-				</p>
-				<div>
-					My username is{' '}
-					{username ? <pre>{username}</pre> : 'not set.'} My
-					publicAddress is <pre>{publicAddress}</pre>
-				</div>
-				<div>
-					<label htmlFor="username">Change username: </label>
-					<input name="username" onChange={this.handleChange} />
-					<button disabled={loading} onClick={this.handleSubmit}>
-						Submit
-					</button>
-				</div>
-				<p>
-					<button onClick={onLoggedOut}>Logout</button>
-				</p>
+	const { loading, user } = state;
+
+	const username = user && user.username;
+
+	return (
+		<div className="Profile">
+			<p>
+				Logged in as <Blockies seed={publicAddress} />
+			</p>
+			<div>
+				My username is {username ? <pre>{username}</pre> : 'not set.'}{' '}
+				My publicAddress is <pre>{publicAddress}</pre>
 			</div>
-		);
-	}
-}
+			<div>
+				<label htmlFor="username">Change username: </label>
+				<input name="username" onChange={handleChange} />
+				<button disabled={loading} onClick={handleSubmit}>
+					Submit
+				</button>
+			</div>
+			<p>
+				<button onClick={onLoggedOut}>Logout</button>
+			</p>
+		</div>
+	);
+};
