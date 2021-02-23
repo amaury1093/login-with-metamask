@@ -1,6 +1,6 @@
 import './Login.css';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Web3 from 'web3';
 
 import { Auth } from '../types';
@@ -11,12 +11,10 @@ interface Props {
 
 let web3: Web3 | undefined = undefined; // Will hold the web3 instance
 
-export class Login extends React.Component<Props> {
-	state = {
-		loading: false, // Loading button state
-	};
+export const Login = ({ onLoggedIn }: Props): JSX.Element => {
+	const [loading, setLoading] = useState(false); // Loading button state
 
-	handleAuthenticate = ({
+	const handleAuthenticate = ({
 		publicAddress,
 		signature,
 	}: {
@@ -31,9 +29,38 @@ export class Login extends React.Component<Props> {
 			method: 'POST',
 		}).then((response) => response.json());
 
-	handleClick = async () => {
-		const { onLoggedIn } = this.props;
+	const handleSignMessage = async ({
+		publicAddress,
+		nonce,
+	}: {
+		publicAddress: string;
+		nonce: string;
+	}) => {
+		try {
+			const signature = await web3!.eth.personal.sign(
+				`I am signing my one-time nonce: ${nonce}`,
+				publicAddress,
+				'' // MetaMask will ignore the password argument here
+			);
 
+			return { publicAddress, signature };
+		} catch (err) {
+			throw new Error(
+				'You need to sign the message to be able to log in.'
+			);
+		}
+	};
+
+	const handleSignup = (publicAddress: string) =>
+		fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
+			body: JSON.stringify({ publicAddress }),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			method: 'POST',
+		}).then((response) => response.json());
+
+	const handleClick = async () => {
 		// Check if MetaMask is installed
 		if (!(window as any).ethereum) {
 			window.alert('Please install MetaMask first.');
@@ -61,7 +88,7 @@ export class Login extends React.Component<Props> {
 		}
 
 		const publicAddress = coinbase.toLowerCase();
-		this.setState({ loading: true });
+		setLoading(true);
 
 		// Look if user with current publicAddress is already present on backend
 		fetch(
@@ -70,75 +97,37 @@ export class Login extends React.Component<Props> {
 			.then((response) => response.json())
 			// If yes, retrieve it. If no, create it.
 			.then((users) =>
-				users.length ? users[0] : this.handleSignup(publicAddress)
+				users.length ? users[0] : handleSignup(publicAddress)
 			)
 			// Popup MetaMask confirmation modal to sign message
-			.then(this.handleSignMessage)
+			.then(handleSignMessage)
 			// Send signature to backend on the /auth route
-			.then(this.handleAuthenticate)
+			.then(handleAuthenticate)
 			// Pass accessToken back to parent component (to save it in localStorage)
 			.then(onLoggedIn)
 			.catch((err) => {
 				window.alert(err);
-				this.setState({ loading: false });
+				setLoading(false);
 			});
 	};
 
-	handleSignMessage = async ({
-		publicAddress,
-		nonce,
-	}: {
-		publicAddress: string;
-		nonce: string;
-	}) => {
-		try {
-			const signature = await web3!.eth.personal.sign(
-				`I am signing my one-time nonce: ${nonce}`,
-				publicAddress,
-				'' // MetaMask will ignore the password argument here
-			);
-
-			return { publicAddress, signature };
-		} catch (err) {
-			throw new Error(
-				'You need to sign the message to be able to log in.'
-			);
-		}
-	};
-
-	handleSignup = (publicAddress: string) => {
-		return fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
-			body: JSON.stringify({ publicAddress }),
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			method: 'POST',
-		}).then((response) => response.json());
-	};
-
-	render() {
-		const { loading } = this.state;
-		return (
-			<div>
-				<p>
-					Please select your login method.
-					<br />
-					For the purpose of this demo, only MetaMask login is
-					implemented.
-				</p>
-				<button
-					className="Login-button Login-mm"
-					onClick={this.handleClick}
-				>
-					{loading ? 'Loading...' : 'Login with MetaMask'}
-				</button>
-				<button className="Login-button Login-fb" disabled>
-					Login with Facebook
-				</button>
-				<button className="Login-button Login-email" disabled>
-					Login with Email
-				</button>
-			</div>
-		);
-	}
-}
+	return (
+		<div>
+			<p>
+				Please select your login method.
+				<br />
+				For the purpose of this demo, only MetaMask login is
+				implemented.
+			</p>
+			<button className="Login-button Login-mm" onClick={handleClick}>
+				{loading ? 'Loading...' : 'Login with MetaMask'}
+			</button>
+			<button className="Login-button Login-fb" disabled>
+				Login with Facebook
+			</button>
+			<button className="Login-button Login-email" disabled>
+				Login with Email
+			</button>
+		</div>
+	);
+};
