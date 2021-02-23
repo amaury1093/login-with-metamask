@@ -1,6 +1,6 @@
 import './App.css';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Login } from '../Login';
 import { Profile } from '../Profile/Profile';
@@ -13,50 +13,43 @@ interface State {
 	auth?: Auth;
 }
 
-export class App extends React.Component<unknown, State> {
-	state: State = {};
+export const App = (): JSX.Element => {
+	const [state, setState] = useState<State>({});
 
-	componentDidMount() {
+	useEffect(() => {
 		// Access token is stored in localstorage
 		const ls = window.localStorage.getItem(LS_KEY);
 		const auth = ls && JSON.parse(ls);
-		this.setState({
-			auth,
-		});
-	}
+		setState({ auth });
+	}, []);
 
-	handleLoggedIn = (auth: Auth) => {
+	const handleLoggedIn = (auth: Auth) => {
 		localStorage.setItem(LS_KEY, JSON.stringify(auth));
-		this.setState({ auth });
+		setState({ auth });
 	};
 
-	handleLoggedOut = () => {
+	const handleLoggedOut = () => {
 		localStorage.removeItem(LS_KEY);
-		this.setState({ auth: undefined });
+		setState({ auth: undefined });
 	};
 
-	render() {
-		const { auth } = this.state;
+	const { auth } = state;
 
-		return (
-			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<h1 className="App-title">
-						Welcome to Login with MetaMask Demo
-					</h1>
-				</header>
-				<div className="App-intro">
-					{auth ? (
-						<Profile
-							auth={auth}
-							onLoggedOut={this.handleLoggedOut}
-						/>
-					) : (
-						<Login onLoggedIn={this.handleLoggedIn} />
-					)}
-				</div>
+	return (
+		<div className="App">
+			<header className="App-header">
+				<img src={logo} className="App-logo" alt="logo" />
+				<h1 className="App-title">
+					Welcome to Login with MetaMask Demo
+				</h1>
+			</header>
+			<div className="App-intro">
+				{auth ? (
+					<Profile auth={auth} onLoggedOut={handleLoggedOut} />
+				) : (
+					<Login onLoggedIn={handleLoggedIn} />
+				)}
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
