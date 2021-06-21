@@ -769,10 +769,10 @@ get-intrinsic@^1.0.1, get-intrinsic@^1.0.2, get-intrinsic@^1.1.0:
     has "^1.0.3"
     has-symbols "^1.0.1"
 
-gh-pages@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-3.2.0.tgz#ac5f9f03dae7622740ff39613ee2cfeacabc680b"
-  integrity sha512-VQTwyRtxoaId0YmDXdC/G854dojpwTuOdpZUL3PGG6WQZvSoGVD8ggedKARZltixIREMezoDywE+g3g2paLxPw==
+gh-pages@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-3.2.2.tgz#3177ef792f8cfcd6872c252c3482910d88b46bbb"
+  integrity sha512-szdkmGpVqMBUZkjgsEXQm5wkLvx/XNvWf3HzL+2ETpLtpaXvSvIzpNgLiiojDzxmbFDf3M5CFK7p/3eYi8U83A==
   dependencies:
     async "^2.6.1"
     commander "^2.18.0"
