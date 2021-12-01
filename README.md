@@ -1,9 +1,6 @@
 # Login with MetaMask
 
 [![Actions Status](https://github.com/amaurym/login-with-metamask-demo/workflows/pr/badge.svg)](https://github.com/amaurym/login-with-metamask-demo/actions)
-[![David (backend)](<https://img.shields.io/david/amaurym/login-with-metamask-demo.svg?label=deps%20(backend)&path=packages/backend>)](https://david-dm.org/amaurym/login-with-metamask-demo?path=packages/backend)
-[![David (frontend)](<https://img.shields.io/david/amaurym/login-with-metamask-demo.svg?label=deps%20(frontend)&path=packages/frontend>)](https://david-dm.org/amaurym/login-with-metamask-demo?path=packages/frontend)
-[![](https://img.shields.io/badge/Buy%20me%20a%20tree-%F0%9F%8C%B3-lightgreen)](https://offset.earth/amaurym)
 
 This demo is published as part of the corresponding blog article: ["One-Click Login with Blockchain: a MetaMask Tutorial"](https://www.toptal.com/ethereum/one-click-login-flows-a-metamask-tutorial).
 
