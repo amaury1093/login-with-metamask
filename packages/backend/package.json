@@ -29,7 +29,7 @@
 		"express-jwt": "^6.0.0",
 		"jsonwebtoken": "^8.5.1",
 		"sequelize": "^6.3.5",
-		"sqlite3": "^5.0.0"
+		"sqlite3": "^5.0.3"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.6",
