@@ -9,9 +9,8 @@
 	"repository": "https://github.com/amaury1729/login-with-metamask",
 	"scripts": {
 		"build": "tsc",
-		"dev": "nodemon --watch 'src/**/*.ts' --exec 'yarn start'",
-		"heroku": "node ./build",
-		"start": "ts-node src"
+		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node src'",
+		"start": "node ./build"
 	},
 	"dependencies": {
 		"@types/bluebird": "^3.5.33",
