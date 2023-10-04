@@ -3,7 +3,7 @@
 	"version": "2.0.0",
 	"author": "Amaury <1293565+amaury1729@users.noreply.github.com>",
 	"description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
-	"homepage": "http://amaurym.com/login-with-metamask",
+	"homepage": "https://amaurym.com/login-with-metamask",
 	"license": "MIT",
 	"main": "build",
 	"private": true,
