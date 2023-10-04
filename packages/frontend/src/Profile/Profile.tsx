@@ -96,7 +96,7 @@ export const Profile = ({ auth, onLoggedOut }: Props): JSX.Element => {
 
 	const { loading, user } = state;
 
-	const username = user.username;
+	const username = user?.username;
 
 	return (
 		<div className="Profile">

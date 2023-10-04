@@ -36,6 +36,8 @@ export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 		nonce: string;
 	}) => {
 		try {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-ignore because web3 is defined here.
 			const signature = await web3.eth.personal.sign(
 				`I am signing my one-time nonce: ${nonce}`,
 				publicAddress,
