@@ -63,8 +63,6 @@ export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 
 	const handleClick = async () => {
 		// Check if MetaMask is installed
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore because web3 is injected already.
 		if (!window.ethereum) {
 			window.alert('Please install MetaMask first.');
 			return;
@@ -73,11 +71,11 @@ export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 		if (!web3) {
 			try {
 				// Request account access if needed
-				await (window as any).ethereum.enable();
+				await window.ethereum.enable();
 
 				// We don't know window.web3 version, so we use our own instance of Web3
 				// with the injected provider given by MetaMask
-				web3 = new Web3((window as any).ethereum);
+				web3 = new Web3(window.ethereum);
 			} catch (error) {
 				window.alert('You need to allow MetaMask.');
 				return;
