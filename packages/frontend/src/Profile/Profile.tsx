@@ -46,9 +46,9 @@ export const Profile = ({ auth, onLoggedOut }: Props): JSX.Element => {
 			},
 		})
 			.then((response) => response.json())
-			.then((user) => setState({ ...state, user }))
+			.then((user) => setState((state) => ({ ...state, user })))
 			.catch(window.alert);
-	});
+	}, [auth]);
 
 	const handleChange = ({
 		target: { value },
