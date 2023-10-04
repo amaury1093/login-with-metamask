@@ -6,9 +6,7 @@ export const find = (req: Request, res: Response, next: NextFunction) => {
 	// If a query string ?publicAddress=... is given, then filter results
 	const whereClause =
 		req.query && req.query.publicAddress
-			? {
-					where: { publicAddress: req.query.publicAddress },
-			  }
+			? { where: { publicAddress: req.query.publicAddress } }
 			: undefined;
 
 	return User.findAll(whereClause)
@@ -54,9 +52,11 @@ export const patch = (req: Request, res: Response, next: NextFunction) => {
 		.then((user: User | null) => {
 			return user
 				? res.json(user)
-				: res.status(401).send({
-						error: `User with publicAddress ${req.params.userId} is not found in database`,
-				  });
+				: res
+						.status(401)
+						.send({
+							error: `User with publicAddress ${req.params.userId} is not found in database`,
+						});
 		})
 		.catch(next);
 };
