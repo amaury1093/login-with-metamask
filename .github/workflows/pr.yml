@@ -6,11 +6,14 @@ jobs:
     lint:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16
             - name: Run yarn lint
               run: |
                   yarn install
-                  cd packages/backend && yarn install
-                  cd ../frontend && yarn install
+                  cd packages/backend && yarn install && yarn build
+                  cd ../frontend && yarn install && yarn build
                   cd ../..
                   yarn lint

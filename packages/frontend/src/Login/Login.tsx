@@ -2,14 +2,13 @@ import './Login.css';
 
 import React, { useState } from 'react';
 import Web3 from 'web3';
-
-import { Auth } from '../types';
+import type { Auth } from '../types';
 
 interface Props {
 	onLoggedIn: (auth: Auth) => void;
 }
 
-let web3: Web3 | undefined = undefined; // Will hold the web3 instance
+let web3: Web3 | undefined; // Will hold the web3 instance
 
 export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 	const [loading, setLoading] = useState(false); // Loading button state
@@ -37,7 +36,9 @@ export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 		nonce: string;
 	}) => {
 		try {
-			const signature = await web3!.eth.personal.sign(
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-ignore because web3 is defined here.
+			const signature = await web3.eth.personal.sign(
 				`I am signing my one-time nonce: ${nonce}`,
 				publicAddress,
 				'' // MetaMask will ignore the password argument here
@@ -62,7 +63,7 @@ export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 
 	const handleClick = async () => {
 		// Check if MetaMask is installed
-		if (!(window as any).ethereum) {
+		if (!window.ethereum) {
 			window.alert('Please install MetaMask first.');
 			return;
 		}
@@ -70,11 +71,11 @@ export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 		if (!web3) {
 			try {
 				// Request account access if needed
-				await (window as any).ethereum.enable();
+				await window.ethereum.enable();
 
 				// We don't know window.web3 version, so we use our own instance of Web3
 				// with the injected provider given by MetaMask
-				web3 = new Web3((window as any).ethereum);
+				web3 = new Web3(window.ethereum);
 			} catch (error) {
 				window.alert('You need to allow MetaMask.');
 				return;
