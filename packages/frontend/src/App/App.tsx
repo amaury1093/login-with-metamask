@@ -1,9 +1,10 @@
 import './App.css';
 
 import React, { useEffect, useState } from 'react';
+
 import { Login } from '../Login';
 import { Profile } from '../Profile/Profile';
-import type { Auth } from '../types';
+import { Auth } from '../types';
 import logo from './logo.svg';
 
 const LS_KEY = 'login-with-metamask:auth';
