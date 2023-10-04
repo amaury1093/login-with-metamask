@@ -10,7 +10,7 @@
 	"repository": "https://github.com/amaury1729/login-with-metamask",
 	"scripts": {
 		"build": "react-scripts build",
-		"start": "react-scripts start"
+		"dev": "react-scripts start"
 	},
 	"dependencies": {
 		"@types/dotenv": "^8.2.0",

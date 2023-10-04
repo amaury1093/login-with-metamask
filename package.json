@@ -9,9 +9,9 @@
 	"scripts": {
 		"deploy:frontend": "cd packages/frontend && yarn build && gh-pages -d build",
 		"lint": "tsc --noEmit && eslint . --ext js,ts,tsx",
-		"start:backend": "cd packages/backend && yarn start",
-		"start:frontend": "cd packages/frontend && yarn start",
-		"start": "run-p -l start:*"
+		"dev:backend": "cd packages/backend && yarn dev",
+		"dev:frontend": "cd packages/frontend && yarn dev",
+		"dev": "run-p -l dev:*"
 	},
 	"devDependencies": {
 		"@amaurym/config": "^1.3.4",
