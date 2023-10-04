@@ -29,6 +29,9 @@
 	"devDependencies": {
 		"typescript": "^4.5.2"
 	},
+	"eslintConfig": {
+		"extends": ["react-app"]
+	},
 	"browserslist": [
 		">0.2%",
 		"not dead",
