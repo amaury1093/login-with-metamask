@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/login-with-metamask-demo/static/css/main.03634c6b.chunk.css",
-    "main.js": "/login-with-metamask-demo/static/js/main.815362b0.chunk.js",
-    "main.js.map": "/login-with-metamask-demo/static/js/main.815362b0.chunk.js.map",
-    "runtime-main.js": "/login-with-metamask-demo/static/js/runtime-main.e085e38f.js",
-    "runtime-main.js.map": "/login-with-metamask-demo/static/js/runtime-main.e085e38f.js.map",
-    "static/js/2.3686eaa4.chunk.js": "/login-with-metamask-demo/static/js/2.3686eaa4.chunk.js",
-    "static/js/2.3686eaa4.chunk.js.map": "/login-with-metamask-demo/static/js/2.3686eaa4.chunk.js.map",
-    "index.html": "/login-with-metamask-demo/index.html",
-    "static/css/main.03634c6b.chunk.css.map": "/login-with-metamask-demo/static/css/main.03634c6b.chunk.css.map",
-    "static/js/2.3686eaa4.chunk.js.LICENSE.txt": "/login-with-metamask-demo/static/js/2.3686eaa4.chunk.js.LICENSE.txt",
-    "static/media/logo.103b5fa1.svg": "/login-with-metamask-demo/static/media/logo.103b5fa1.svg"
+    "main.css": "/login-with-metamask/static/css/main.03634c6b.chunk.css",
+    "main.js": "/login-with-metamask/static/js/main.815362b0.chunk.js",
+    "main.js.map": "/login-with-metamask/static/js/main.815362b0.chunk.js.map",
+    "runtime-main.js": "/login-with-metamask/static/js/runtime-main.9507577d.js",
+    "runtime-main.js.map": "/login-with-metamask/static/js/runtime-main.9507577d.js.map",
+    "static/js/2.41730ab7.chunk.js": "/login-with-metamask/static/js/2.41730ab7.chunk.js",
+    "static/js/2.41730ab7.chunk.js.map": "/login-with-metamask/static/js/2.41730ab7.chunk.js.map",
+    "index.html": "/login-with-metamask/index.html",
+    "static/css/main.03634c6b.chunk.css.map": "/login-with-metamask/static/css/main.03634c6b.chunk.css.map",
+    "static/js/2.41730ab7.chunk.js.LICENSE.txt": "/login-with-metamask/static/js/2.41730ab7.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "/login-with-metamask/static/media/logo.103b5fa1.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e085e38f.js",
-    "static/js/2.3686eaa4.chunk.js",
+    "static/js/runtime-main.9507577d.js",
+    "static/js/2.41730ab7.chunk.js",
     "static/css/main.03634c6b.chunk.css",
     "static/js/main.815362b0.chunk.js"
   ]
