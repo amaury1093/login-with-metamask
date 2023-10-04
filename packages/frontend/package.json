@@ -18,6 +18,7 @@
 		"@types/react": "^17.0.35",
 		"@types/react-dom": "^17.0.11",
 		"@types/web3": "^1.0.20",
+		"dotenv": "^16.3.1",
 		"jwt-decode": "^3.1.2",
 		"react": "^17.0.2",
 		"react-blockies": "^1.4.1",

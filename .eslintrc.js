@@ -1,7 +1,14 @@
 module.exports = {
-	...require('@amaurym/eslintrc'),
-	// FIXME Turn these rules on again.
+	extends: [
+		require.resolve('@vercel/style-guide/eslint/node'),
+		require.resolve('@vercel/style-guide/eslint/typescript'),
+	],
+	parserOptions: {
+		project: './tsconfig.json',
+	},
+	// Vercel rules are too strict for this demo project. Turn some of them off.
 	rules: {
+		'@typescript-eslint/no-unsafe-argument': 'off',
 		'@typescript-eslint/explicit-function-return-type': 'off',
 		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/no-non-null-assertion': 'off',
@@ -11,6 +18,10 @@ module.exports = {
 		'@typescript-eslint/no-unsafe-call': 'off',
 		'@typescript-eslint/no-unsafe-return': 'off',
 		'@typescript-eslint/no-floating-promises': 'off',
-		"@typescript-eslint/unbound-method": "warn",
+		'@typescript-eslint/naming-convention': 'off',
+		'@typescript-eslint/no-misused-promises': 'off',
+		'no-alert': 'off',
+		'no-console': 'off',
+		'unicorn/filename-case': 'off',
 	},
 };

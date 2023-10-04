@@ -2,14 +2,13 @@ import './Login.css';
 
 import React, { useState } from 'react';
 import Web3 from 'web3';
-
-import { Auth } from '../types';
+import type { Auth } from '../types';
 
 interface Props {
 	onLoggedIn: (auth: Auth) => void;
 }
 
-let web3: Web3 | undefined = undefined; // Will hold the web3 instance
+let web3: Web3 | undefined; // Will hold the web3 instance
 
 export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 	const [loading, setLoading] = useState(false); // Loading button state
@@ -37,7 +36,7 @@ export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 		nonce: string;
 	}) => {
 		try {
-			const signature = await web3!.eth.personal.sign(
+			const signature = await web3.eth.personal.sign(
 				`I am signing my one-time nonce: ${nonce}`,
 				publicAddress,
 				'' // MetaMask will ignore the password argument here
