@@ -10,7 +10,7 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node src'",
-		"start": "node ."
+		"start": "node ./build"
 	},
 	"dependencies": {
 		"@types/cors": "^2.8.8",
