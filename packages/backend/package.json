@@ -4,13 +4,13 @@
 	"author": "Amaury <1293565+amaury1729@users.noreply.github.com>",
 	"description": "Demo project for 'One-click Login with Blockchain: A MetaMask Tutorial'",
 	"license": "MIT",
-	"main": "lib",
+	"main": "build",
 	"private": true,
 	"repository": "https://github.com/amaury1729/login-with-metamask",
 	"scripts": {
 		"build": "tsc",
 		"dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node src'",
-		"start": "node ./build"
+		"start": "node ."
 	},
 	"dependencies": {
 		"@types/cors": "^2.8.8",
