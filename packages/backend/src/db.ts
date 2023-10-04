@@ -1,6 +1,7 @@
 import os from 'os';
 import path from 'path';
 import { INTEGER, Sequelize, STRING } from 'sequelize';
+
 import { User } from './models';
 
 const sequelize = new Sequelize('login-with-metamask-database', '', undefined, {

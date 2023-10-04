@@ -1,4 +1,5 @@
 import express from 'express';
+
 import { authRouter } from './auth';
 import { userRouter } from './users';
 

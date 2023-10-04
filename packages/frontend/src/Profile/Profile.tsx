@@ -3,7 +3,8 @@ import './Profile.css';
 import jwtDecode from 'jwt-decode';
 import React, { useState, useEffect } from 'react';
 import Blockies from 'react-blockies';
-import type { Auth } from '../types';
+
+import { Auth } from '../types';
 
 interface Props {
 	auth: Auth;
@@ -45,9 +46,7 @@ export const Profile = ({ auth, onLoggedOut }: Props): JSX.Element => {
 			},
 		})
 			.then((response) => response.json())
-			.then((user) => {
-				setState({ ...state, user });
-			})
+			.then((user) => setState({ ...state, user }))
 			.catch(window.alert);
 	}, []);
 
@@ -79,9 +78,7 @@ export const Profile = ({ auth, onLoggedOut }: Props): JSX.Element => {
 			method: 'PATCH',
 		})
 			.then((response) => response.json())
-			.then((newUser) => {
-				setState({ ...state, loading: false, user: newUser });
-			})
+			.then((user) => setState({ ...state, loading: false, user }))
 			.catch((err) => {
 				window.alert(err);
 				setState({ ...state, loading: false });
@@ -96,7 +93,7 @@ export const Profile = ({ auth, onLoggedOut }: Props): JSX.Element => {
 
 	const { loading, user } = state;
 
-	const username = user?.username;
+	const username = user && user.username;
 
 	return (
 		<div className="Profile">

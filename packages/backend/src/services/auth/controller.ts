@@ -1,7 +1,8 @@
 import { recoverPersonalSignature } from 'eth-sig-util';
 import { bufferToHex } from 'ethereumjs-util';
-import type { NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
+
 import { config } from '../../config';
 import { User } from '../../models/user.model';
 
@@ -53,12 +54,13 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
 				// sigUtil.recoverPersonalSignature matches the initial publicAddress
 				if (address.toLowerCase() === publicAddress.toLowerCase()) {
 					return user;
-				}
-				res.status(401).send({
-					error: 'Signature verification failed',
-				});
+				} else {
+					res.status(401).send({
+						error: 'Signature verification failed',
+					});
 
-				return null;
+					return null;
+				}
 			})
 			////////////////////////////////////////////////////
 			// Step 3: Generate a new nonce for the user
@@ -79,7 +81,7 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
 			// Step 4: Create JWT
 			////////////////////////////////////////////////////
 			.then((user: User) => {
-				return new Promise<string>((resolve, reject) => {
+				return new Promise<string>((resolve, reject) =>
 					// https://github.com/auth0/node-jsonwebtoken
 					jwt.sign(
 						{
@@ -94,16 +96,15 @@ export const create = (req: Request, res: Response, next: NextFunction) => {
 						},
 						(err, token) => {
 							if (err) {
-								reject(err);
-								return;
+								return reject(err);
 							}
 							if (!token) {
 								return new Error('Empty token');
 							}
-							resolve(token);
+							return resolve(token);
 						}
-					);
-				});
+					)
+				);
 			})
 			.then((accessToken: string) => res.json({ accessToken }))
 			.catch(next)

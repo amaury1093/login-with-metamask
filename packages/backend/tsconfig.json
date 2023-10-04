@@ -1,9 +1,11 @@
 {
-	"compilerOptions": {
-		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
-		"moduleResolution": "node",
-		"outDir": "build",
-		"target": "ES6"
-	}
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "outDir": "build",
+    "module": "commonjs",
+    "strict": true,
+    "target": "es6"
+  },
+  "include": ["src/"]
 }
