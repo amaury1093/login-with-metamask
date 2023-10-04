@@ -63,7 +63,9 @@ export const Login = ({ onLoggedIn }: Props): JSX.Element => {
 
 	const handleClick = async () => {
 		// Check if MetaMask is installed
-		if (!(window as any).ethereum) {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-ignore because web3 is injected already.
+		if (!window.ethereum) {
 			window.alert('Please install MetaMask first.');
 			return;
 		}
