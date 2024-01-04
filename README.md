@@ -76,7 +76,7 @@ Since this project is a demo, I haven't written any tests for it. Only code lint
 
 ## Credits
 
-If you liked this demo, I appreciate donations. My Ethereum address is `0xa395447BF15f7525484C0378c76627D45ADE0B96`.
+If you liked this demo, I appreciate donations. My Ethereum address is `0x0b664ebF14E204CdE96690461830e0DD5dFb22aA`.
 
 ---
 
