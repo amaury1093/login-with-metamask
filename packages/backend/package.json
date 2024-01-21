@@ -23,7 +23,7 @@
 		"cors": "^2.8.5",
 		"eth-sig-util": "^3.0.0",
 		"ethereumjs-util": "^7.0.5",
-		"express": "^4.16.4",
+		"express": "^4.17.3",
 		"express-jwt": "^6.0.0",
 		"jsonwebtoken": "^8.5.1",
 		"sequelize": "^6.3.5",
